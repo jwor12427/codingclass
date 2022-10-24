@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+
+        .section>h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .card {
+            width: 32%;
+            background-color: #f5f5f5;
+        }
+
+        .card__body {
+            padding: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardType01" class="card__wrap nexon section">
+        <h2>인상파 화가전 - 고흐</h2>
+        <p>인상파의 화가 고흐의 작품 관람전 입니다.</p>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg01_01.jpg" alt="해바라기">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">해바라기</h3>
+                    <p class="desc">고흐의 해바라기는 세계에서 가장 사랑받는 작품 중 하나 입니다. 본 작품에는 강렬한 노란색과 인상파 특유의 질감이 돋보이는 작품 중 하나로 고흐특유의 기법이 돋보이는</p>
+                    <a class="btn" href="/">
+                        더 자세히 보기
+                        <span aria-hidden="true">
+                            <svg width="66" height="9" viewBox="0 0 66 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M65.3504 4.79795C65.5457 4.60269 65.5457 4.28611 65.3504 4.09084L62.1685 0.908863C61.9732 0.713601 61.6566 0.713601 61.4614 0.908863C61.2661 1.10413 61.2661 1.42071 61.4614 1.61597L64.2898 4.4444L61.4614 7.27282C61.2661 7.46809 61.2661 7.78467 61.4614 7.97993C61.6566 8.17519 61.9732 8.17519 62.1685 7.97993L65.3504 4.79795ZM0.996887 4.9444H64.9969V3.9444H0.996887V4.9444Z"
+                                    fill="black">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg01_02.jpg" alt="별이 빛나는 밤">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">별이 빛나는 밤</h3>
+                    <p class="desc">고흐의 별이 빛나는 밤은 고흐만의 도특한 기법이 돋보이는 작품 중 가장 대표적인 그림입니다. 밤 하늘의 별빛의 강렬한 표현은 보는 사람을 하여금 강렬한 느낌을 받을 수 있게</p>
+                    <a class="btn" href="/">
+                        더 자세히 보기
+                        <span aria-hidden="true">
+                            <svg width="66" height="9" viewBox="0 0 66 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M65.3504 4.79795C65.5457 4.60269 65.5457 4.28611 65.3504 4.09084L62.1685 0.908863C61.9732 0.713601 61.6566 0.713601 61.4614 0.908863C61.2661 1.10413 61.2661 1.42071 61.4614 1.61597L64.2898 4.4444L61.4614 7.27282C61.2661 7.46809 61.2661 7.78467 61.4614 7.97993C61.6566 8.17519 61.9732 8.17519 62.1685 7.97993L65.3504 4.79795ZM0.996887 4.9444H64.9969V3.9444H0.996887V4.9444Z"
+                                    fill="black">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg01_03.jpg" alt="자화상">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">자화상</h3>
+                    <p class="desc">고흐의 자화상은 고흐의 생전 모습을 그린 작품입니다. 자화상 속 고흐의 모습은 고갱과의 불화이후 자신의 귀를 자른것으로 유명합니다. 자신의 자화상 속에도 인상파 특유의 </p>
+                    <a class="btn" href="/">
+                        더 자세히 보기
+                        <span aria-hidden="true">
+                            <svg width="66" height="9" viewBox="0 0 66 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M65.3504 4.79795C65.5457 4.60269 65.5457 4.28611 65.3504 4.09084L62.1685 0.908863C61.9732 0.713601 61.6566 0.713601 61.4614 0.908863C61.2661 1.10413 61.2661 1.42071 61.4614 1.61597L64.2898 4.4444L61.4614 7.27282C61.2661 7.46809 61.2661 7.78467 61.4614 7.97993C61.6566 8.17519 61.9732 8.17519 62.1685 7.97993L65.3504 4.79795ZM0.996887 4.9444H64.9969V3.9444H0.996887V4.9444Z"
+                                    fill="black">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+#card {
+    h2 {
+        display: inline-block;
+        font-size: 1rem;
+        border: 1px solid $black;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        margin-top: 50px;
+    }
+    // @include blind;
+}
+
+.card__inner {
+    @include flex_sb;
+    @include border_bottom;
+    padding-bottom: 70px;
+    justify-content: flex-start;
+
+    &.horizon {
+        .card {
+            width: 100%;
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: space-between;
+
+            img {
+                border-radius: 0px;
+            }
+            h3 {
+                margin-top: 0;
+            }
+
+            figure {
+                width: 30%;
+            }
+
+            > div {
+                width: 67%;
+            }
+        }
+    }
+
+
+    .card {
+        position: relative;
+        width: 24%;
+        box-sizing: border-box;
+        margin-right: 10px;
+
+        img {
+            border-radius: 10px;
+        }
+        .cate {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background-color: #fff;
+            font-size: 14px;
+            border-radius: 30px;
+            padding: 2px 20px;
+        }
+    }
+
+    > div {
+        width: 24%;
+
+        figure {
+            position: relative;
+            overflow: hidden;
+            img {
+                filter: saturate(0%);
+                transition: all 0.3s;
+    
+                &:hover {
+                    filter: saturate(100%);
+                }
+            }
+            .go {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                display: inline-block;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                background: $black;
+                text-align: center;
+                line-height: 31px;
+                transform: translateX(100px) rotate(720deg);
+                opacity: 0;
+                transition: all 0.6s ease;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url("data:image/svg+xml, %3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.646447 8.64645C0.451184 8.84171 0.451184 9.15829 0.646447 9.35355C0.841709 9.54882 1.15829 9.54882 1.35355 9.35355L0.646447 8.64645ZM9.5 1C9.5 0.723858 9.27614 0.5 9 0.5L4.5 0.5C4.22386 0.5 4 0.723858 4 1C4 1.27614 4.22386 1.5 4.5 1.5L8.5 1.5L8.5 5.5C8.5 5.77614 8.72386 6 9 6C9.27614 6 9.5 5.77614 9.5 5.5L9.5 1ZM1.35355 9.35355L9.35355 1.35355L8.64645 0.646447L0.646447 8.64645L1.35355 9.35355Z' fill='white'/%3E%3C/svg%3E");
+            }
+
+            &:hover .go {
+                opacity: 1;
+                transform: translateX(0) rotate(0);
+            }
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-top: 0.3em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; 
+            -webkit-box-orient: vertical;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+        }
+
+
+    }
+}

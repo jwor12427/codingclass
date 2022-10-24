@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기02</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기(카드 유형 - 02)</h2>
+            <p class="t_desc2">
+                카드 형식의 사이트를 제작 할 수 있습니다. 유형02 에서는 8개의 카드가 존재하는 사이트를 보여줍니다.
+            </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2dVMs09Xd6Iw5jh2gVK4y4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D28%253A2" allowfullscreen></iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>.gmark {
+    font-family: GmarketSans;
+    font-weight: 500;
+}
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card__inner .card {
+    width: 24%;
+    position: relative;
+}
+.card__inner .card:nth-child(1) {
+    margin-bottom: 50px;
+}
+.card__inner .card img {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.card__inner .card .tit {
+    font-size: 28px;
+    margin-bottom: 10px;
+    /* 한줄 효과 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.card__inner .card .desc {
+    font-size: 18px;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.4;
+    /* 세줄 효과 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+.card__inner .more {
+    width: 24px;
+    height: 24px;
+    background-image: url(img/arrow.svg);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 280px;
+    border-radius: 5px;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+            
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="cardType" class="card__wrap GmarketSans section"&gt;
+&lt;h2&gt;고래에대해 알아보자&lt;/h2&gt;
+&lt;p&gt;
+    바다에 사는 다양한 고래들을 사진으로 보고 알아보는 시간을 가져 봅시다.&lt;br&gt;
+    고래들의 매력에 빠져보아요
+&lt;/p&gt;
+    &lt;div class="card__inner container"&gt;
+        &lt;article class="card"&gt;
+            &lt;img src="img/card_bg02_01.jpg" alt="혹등고래"&gt;
+            &lt;h3 class="tit"&gt;혹등고래&lt;/h3&gt;
+            &lt;p class="desc"&gt;혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는 바다에서 서식하는&lt;/p&gt;
+            &lt;a href="#" class="more"&gt;&lt;span class="ir"&gt;더보기&lt;/span&gt;&lt;/a&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                이미지가 나오지 않을 시 다음과 같은 효과를 넣어 줄 수 있습니다.
+            </p>
+            <p class="t_box">
+                /* ir 효과(이미지 대체 효과 == alt) */ <br>
+                .ir { <br>
+                    display: block; <br>
+                    overflow: hidden; <br>
+                    font-size: 0; <br>
+                    line-height: 0; <br>
+                    text-indent: -9999px; <br>
+                }
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/cardType/cardType02.html"></iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/site/cardType/cardType02.html" target="_blank">원본 소스 보기</a>
+                <a href="https://jwor12427.github.io/coding/site/cardType/cardType02.html" target="_blank">페이지 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

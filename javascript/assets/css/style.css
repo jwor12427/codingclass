@@ -1,0 +1,453 @@
+/* 웹폰트 */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+/* 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'NexonLv1Gothic';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* 목록 초기화 */
+body {
+    padding: 40px;
+}
+li {
+    list-style: none;
+}
+
+/* 제목 초기화 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/* 모든 페이지 레이아웃 */
+#header {
+    border-bottom: 1px dashed #dcdcdc;
+    padding-bottom: 40px;
+    text-align: center;
+}
+#main {
+    padding: 40px 0;
+    border-bottom: 1px dashed #dcdcdc; 
+}
+#footer {
+    padding: 40px 0;
+    text-align: center;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/* container */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+/* 헤더 영역 */
+#header h1 {
+    font-size: 60px;
+}
+#header h1 a {
+    font-size: 80px;
+    color: #5f87f5;
+    font-weight: 600;
+}
+.header_nav ul li {
+    display: inline;
+}
+.header_nav ul .active a {
+    background-color: #5f87f5;
+    color: #fff;
+}
+.header_nav ul li a {
+    border: 1px solid #5f87f5;
+    padding: 8px 25px;
+    display: inline-block;
+    margin-bottom: 7px;
+    color: #5f87f5;
+}
+.header_nav ul li a:hover {
+    background-color: #5f87f5;
+    color: #fff;
+}
+
+.header_nav .effect {
+    margin-top: 10px;
+}
+.header_nav .effect li a {
+    border-radius: 40px;
+}
+
+/* 메인 샘플 */
+.main_sample {
+    margin-top: 40px;
+    border-top: 1px dashed #dcdcdc;
+    padding-top: 40px;
+}
+.main_sample h3 {
+   font-size: 16px;
+   margin-bottom: 5px;
+}
+.main_sample p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.main_sample .result {
+    margin-bottom: 80px;
+    margin-top: 10px;
+    background-color: #afc3fa59;
+    padding: 10px;
+    border-radius: 5px;
+}
+/* intro_menu */
+.intro_menu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(5px);
+    background-color: rgba(230, 226, 226, 0.244);
+    padding: 3vw;
+    border-radius: 1vw;
+    font-size: 1vw;
+    text-align: center;
+    color: #7A4495;
+}
+.intro_menu li {
+    font-size: 20px;
+}
+.intro_menu li a{
+    color: #7F5283;
+}
+.intro_menu li a:hover{
+    text-decoration: underline;
+}
+@media(max-width: 600px){
+    .intro_menu {
+        width: 90%;
+    }
+    .intro_menu li {
+        font-size: 16px;
+    }
+    .intro_menu li a {
+        font-size: 16px;
+    }
+}
+/* sample */
+.sample {
+    margin-bottom: 80px;
+}
+.sample .table {
+    margin-bottom: 10px;
+}
+.sample .table table {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+}
+.sample .table table tr th {
+    font-weight: normal;
+    background-color: #f5f5f5;
+    padding: 3px;
+}
+.sample .table table tr td {
+    border: 1px solid #e6e6e6;
+    padding: 6px;
+}
+.sample .table.left tr td {
+    text-align: left;
+}
+.sample .table.left .ce {
+    text-align: center;
+}
+.sample .table table tr td[class*="_P"] {
+    color: #fff;
+}
+.sample .table table tr td[class*="_P"]:hover {
+    color: #000;
+    cursor: help;
+}
+.sample .box {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #666;
+}
+.sample .view {
+    border: 1px solid #e6e6e6;
+    padding: 30px 20px 20px 20px;
+}
+.sample .blue {
+    background-color: #89CFFD;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    color: #fff;
+}
+.sample .sbox {
+    width: 400px;
+    height: 200px;
+    background-color: #7FBCD2;
+    border: 1px solid #277BC0;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    text-align: center;
+    color: #fff;
+}
+.sample .sbox::after {
+    content: '';
+    width: 480px;
+    height: 280px;
+    border: 1px dashed #0F3460;
+    position: absolute;
+    left: -21px;
+    top: -21px;
+}
+.sample .sbox::before {
+    content: '';
+    width: 398px;
+    height: 198px;
+    border: 1px dashed #0F3460;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.sResult {
+    text-align: center;
+    padding-top: 10px;
+}
+.sample .button {
+    border: 1px solid #e6e6e6;
+    padding: 30px 20px 20px 20px;
+    border-radius: 0 0 5px 5px;
+}
+.sample .button a {
+    border: 1px solid #277BC0;
+    color: #0078AA;
+    border-radius: 40px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 5px;
+}
+.sample .button a:hover {
+    background-color: #277BC0;
+    color: #fff;
+}
+@media(max-width:800px) {
+    .sample .table {
+        overflow-x: scroll;
+    }
+    .sample .table table {
+        width: 780px;
+    }
+    .sample .table table tr td[class*="_P"] {
+        color: #000;
+    }
+}
+
+/* 티스토리용 문서 */
+
+.document i {
+    font-style: normal;
+    position: relative;
+}
+.document i::before {
+    content: '';
+    background-color: #0242f13f;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+}
+.document hr {
+    border: 0;
+    border-top: 1px dashed #dcdcdc;
+    margin-top: 40px;
+}
+.document .t_tit {
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    
+}
+.document .t_tit2 {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+.document .t_tit3 {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.document .t_desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px !important;
+}
+.document .t_desc2 {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #0243f1;
+    background-color: #f9f9f9;
+}
+.document .t_box {
+    padding: 20px !important;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    color: #666;
+    border-radius: 5px;
+}
+.document .t_table {
+    border: 1px solid #dcdcdc;
+    width: 100%;
+    border-spacing: 0;              
+    border-collapse: collapse;
+}
+.document .t_table tr th {
+    background-color: #f9f9f9;
+}
+.document .t_table tr th,
+.document .t_table tr td {
+    border: 1px solid #dcdcdc;
+    font-weight: normal;
+    padding: 8px 10px;
+    color: #666;
+}
+.document .t_table .ce {
+    text-align: center;
+}
+#codepen {
+    margin-bottom: 50px;
+}
+.document .t_iframe {
+    position: relative;
+    padding-top: 56%;
+    width: 100%;
+    height: 0;
+}
+.document .t_iframe iframe{
+    border: 1px solid rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+}
+.document .t_link {
+    display: flex;
+    flex-wrap: wrap;
+}
+.document .t_link a {
+    display: block;
+    width: 200px;
+    background-color: #f5f5f5;
+    margin: 40px auto;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s;
+}
+.document .t_link a:hover {
+    background: #d6d6d6;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 800px) {
+    body {
+        padding: 20px;
+    }
+}
+
+
+/* 버튼 */
+.cssicon{
+    transition:all .5s ease;
+    background:#7FB5FF;
+    border-radius:.4em;
+    height:2em;
+    width:2em;
+    /* adjust font size to scale */
+    font-size:24px;
+    z-index: 9999;
+    position: fixed;
+    left: 50%;
+    bottom: -220px;
+    transform: translateX(-50%);
+    
+}
+.cssicon:hover{
+    background:#22577A;
+    cursor: pointer;
+} 
+.cssicon:focus{
+    outline:none;
+}
+  
+.cssicon span,
+.cssicon span:before,
+.cssicon span:after{
+    border-radius:.3em;
+    border:0em solid #fff;
+    background-color:#fff;
+    height:.2em;
+    display:block;
+    transition:all .3s ease;
+    transition-property:top,bottom,left,right,transform,border-radius;
+    margin-top: 0.1rem;
+   
+}
+.cssicon span{
+    top:1em;
+    left:.5em;
+    width:1em;
+    position:relative;
+    background:transparent;
+}
+.cssicon span:after,
+.cssicon span:before{
+    content:"";
+    position:absolute;
+    width:100%; 
+}
+
+.up span{
+    width:.8em;
+    left:1em;
+}
+.up span:before{
+    left:.25em;
+    transform:rotate(45deg);
+}
+.up span:after{
+    right:.25em;
+    transform:rotate(-45deg);
+}
+.cssicon.up.show {
+    bottom: 150px;
+}

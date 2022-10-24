@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기1</title>
+
+    <!-- SEO -->
+    <meta name="author" content="JeongEunbi">
+    <meta name="description" content="사이트 만들기 튜토리얼입니다.">
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, 포토폴리오">
+    <meta name="robots" content="all">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+
+    <!-- CSS(섹션별) -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/card.css">
+    <link rel="stylesheet" href="assets/css/image.css">
+    <link rel="stylesheet" href="assets/css/text.css">
+    <link rel="stylesheet" href="assets/css/imgText.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+
+</head>
+<body>
+    <div id="skip">
+        <a href="#">헤더 영역 바로가기</a>
+        <a href="#">슬라이드 영역 바로가기</a>
+        <a href="#">이미지 영역 바로가기</a>
+        <a href="#">이미지/텍스트 영역 바로가기</a>
+        <a href="#">카드 영역 바로가기</a>
+        <a href="#">배너 영역 바로가기</a>
+        <a href="#">텍스트 영역 바로가기</a>
+        <a href="#">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+    <header id="headerType" class="header__wrap nexon">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">Birds <em>Story</em></a>
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li><a href="#imageType" >남극 소식</a></li>
+                    <li><a href="#imgTextType">맹금류 이야기</a></li>
+                    <li><a href="#cardType">친숙한 새들</a></li>
+                    <li><a href="#bannerType">새로나온 책</a></li>
+                    <li><a href="#textType">앵무새는 어떤가요</a></li>
+                </ul>
+            </div>
+            <div class="header__member">
+                <a href="#">로그인</a>
+            </div>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <!-- //headerType -->
+    
+    <main id="mainType">
+        <section id="sliderType" class="slider__wrap nexon">
+            <h2 class="blind">새로운 소식</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <span>birds</span>
+                            <h3>For the Birds</h3>
+                            <p>
+                                지금부터 당신에게 들려드릴 조금은 특별한 <br>
+                                새들에 대한 이야기 입니다.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <span>birds</span>
+                            <h3>For the Birds</h3>
+                            <p>
+                                지금부터 당신에게 들려드릴 조금은 특별한 <br>
+                                새들에 대한 이야기 입니다.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <span>birds</span>
+                            <h3>For the Birds</h3>
+                            <p>
+                                지금부터 당신에게 들려드릴 조금은 특별한 <br>
+                                새들에 대한 이야기 입니다.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button">
+                    <div class="swiper-button-play"><span class="ir">play</span></div>
+                    <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>         
+        </section>
+        <!-- //sliderType -->
+        
+        <section id="imageType" class="image__wrap nexon section content__item">
+            <h2>남극의 신사 펭귄🐧</h2>
+            <p>가장 유명한 두 펭귄, 황제펭귄과 아델리펭귄을 소개합니다.</p>
+            <div class="image__inner container">
+                <article class="image img1">
+                    <h3 class="image__title">아델리펭귄(Adélie Penguin)</h3>
+                    <p class="image__desc">아델리펭귄은 작고 귀여운 외모와 달리 성격이 나쁘기로 유명합니다. 호기심이 많고 겁이 없어서 공격성이 높은 펭귄입니다. 아델리펭귄은 집을 짓기위해서 다른펭귄들의 조약돌을 도둑질 하기도 한답니다.</p>
+                    <a class="image__btn" href="/" title="자세히보기">자세히 보기</a>
+                </article>
+                <article class="image img2">
+                    <h3 class="image__title">황제펭귄(Emperor penguin)</h3>
+                    <p class="image__desc">황제펭귄은 지구상에 현존하는 펭귄중 가장 큰 펭귄입니다. 까만 턱시도를 입은 듯한 모습과 추워서 항상 차렷 자세로 있는 것 때문에 별명이 남극의 신사로 불리운답니다.</p>
+                    <a class="image__btn black" href="/" title="자세히보기">자세히 보기</a>
+                </article>
+            </div>   
+        </section>
+        <!-- //imageType -->
+        
+        <section id="imgTextType" class="image__wrap nexon section gray content__item">
+            <h2 class="blind">올빼미와 부엉이</h2>
+            <div class="imgText__inner container">
+                <div class="imgText__txt">
+                    <span>비슷하지만 서로 다른 올빼미와 부엉이</span>
+                    <h3>올빼미, 그리고 부엉이</h3>
+                    <p>비슷하게 생겨서 어느 동물인지 헷갈리는 두 동물을 소개합니다.</p>
+                    <ul>
+                        <li><a href="/">올빼미에 대하여</a></li>
+                        <li><a href="/">부엉이에 대하여</a></li>
+                        <li><a href="/">올빼미와 부엉이에 차이는?</a></li>
+                        <li><a href="/">날카로운 발톱의 소유자, 맹금류</a></li>
+                        <li><a href="/">올빼미의 목은 얼마나 돌아가나요?</a></li>
+                        <li><a href="/">밤을새는 부엉이</a></li>
+                    </ul>
+                </div>
+                <div class="imgText__img img1">
+                    <a href="/">귀여운 올빼미</a>
+                </div>
+                <div class="imgText__img img2">
+                    <a class="blue" href="/">부엉부엉 부엉이</a>
+                </div>
+            </div>   
+        </section>
+        <!-- //imgTextType -->
+        
+        <section id="cardType" class="card__wrap nexon section content__item">
+            <h2>당신에게 친숙한 새들의 이야기</h2>
+            <p>많은 이들과 함께하는 새, 까마귀, 까치, 비둘기에 대한 이야기를 풀어보아요🕊️</p>
+            <div class="card__inner container">
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_01.jpg" alt="해바라기">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">까마귀(Crow)</h3>
+                        <p class="desc">까마귀는 조류 중에서도 까치, 앵무새와 함께 높은 지능을 가지고 있는 새입니다. 별다른 훈련없이 거울 속 자신을 알아보는 조류입니다. 까마귀는 종종 도구를 사용하는 모습을 보이기도 합니다.</p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span aria-hidden="true">
+                                <svg width="66" height="9" viewBox="0 0 66 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M65.3504 4.79795C65.5457 4.60269 65.5457 4.28611 65.3504 4.09084L62.1685 0.908863C61.9732 0.713601 61.6566 0.713601 61.4614 0.908863C61.2661 1.10413 61.2661 1.42071 61.4614 1.61597L64.2898 4.4444L61.4614 7.27282C61.2661 7.46809 61.2661 7.78467 61.4614 7.97993C61.6566 8.17519 61.9732 8.17519 62.1685 7.97993L65.3504 4.79795ZM0.996887 4.9444H64.9969V3.9444H0.996887V4.9444Z"
+                                        fill="black">
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_02.jpg" alt="별이 빛나는 밤">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">까치(Oriental Magpie)</h3>
+                        <p class="desc">적응력이 강한 까치는 사람이 사는 도시에서도 잘 살아가는 새입니다. 까치의 가장 돋보이는 특징은 긴 꼬리입니다. 까치의 앉은 모습을 보면 꽁치를 위아래로 까딱거리는 모습을 볼 수 있습니다.</p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span aria-hidden="true">
+                                <svg width="66" height="9" viewBox="0 0 66 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M65.3504 4.79795C65.5457 4.60269 65.5457 4.28611 65.3504 4.09084L62.1685 0.908863C61.9732 0.713601 61.6566 0.713601 61.4614 0.908863C61.2661 1.10413 61.2661 1.42071 61.4614 1.61597L64.2898 4.4444L61.4614 7.27282C61.2661 7.46809 61.2661 7.78467 61.4614 7.97993C61.6566 8.17519 61.9732 8.17519 62.1685 7.97993L65.3504 4.79795ZM0.996887 4.9444H64.9969V3.9444H0.996887V4.9444Z"
+                                        fill="black">
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_03.jpg" alt="자화상">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">비둘기(Rock dove)</h3>
+                        <p class="desc">전세계 대도시에서 흔하게 볼수 있는 비둘기는 수명이 10년~ 20년으로 꽤 긴편에 속합니다. 주로 단체 생활을 하며 위협을 느낄 때는 특유의 '구르르'소리를 통해 의사를 전달합니다.</p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span aria-hidden="true">
+                                <svg width="66" height="9" viewBox="0 0 66 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M65.3504 4.79795C65.5457 4.60269 65.5457 4.28611 65.3504 4.09084L62.1685 0.908863C61.9732 0.713601 61.6566 0.713601 61.4614 0.908863C61.2661 1.10413 61.2661 1.42071 61.4614 1.61597L64.2898 4.4444L61.4614 7.27282C61.2661 7.46809 61.2661 7.78467 61.4614 7.97993C61.6566 8.17519 61.9732 8.17519 62.1685 7.97993L65.3504 4.79795ZM0.996887 4.9444H64.9969V3.9444H0.996887V4.9444Z"
+                                        fill="black">
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- //cardType-->
+        
+        <section id="bannerType" class="banner__wrap nexon content__item">
+            <h2 class="blind">배너</h2>
+            <div class="banner__inner">
+                <h3 class="title">새의 언어</h3>
+                <p class="desc">더 많고, 다양한 새들의 이야기가 당신을 기다리고 있습니다.
+                <a href="#" title="페이지 이동">What It's Like To Be A Bird</a></p>
+                <span class="small">이 달의 이야기</span>
+            </div>
+        </section>
+        <!-- //bannerType -->
+        
+        <section id="textType" class="text__wrap nexon section content__item">
+            <span>새롭게 업데이트 된 앵무새에 종류</span>
+            <h2 class="mb70">멋쟁이, 따라쟁이 앵무새🦜</h2>
+            <div class="text__inner container">
+                <div class="text t1">
+                    <h3 class="text__title">금강앵무</h3>
+                    <p class="text__desc">금강앵무는 앵무새는 대부분의 매체에서 앵무새 하면 나오는 앵무새입니다. 깃털색이 화려하며, 크기가 대형종이 속하는 앵무새 입니다.</p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">회색앵무</h3>
+                    <p class="text__desc">회색앵무는 앵무새중 가장 지능이 높다고 알려진 새입니다. 세계에서 가장 유명한 회색앵무는 이렌느 페퍼버그 박사의 알렉스입니다.</p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">왕관앵무</h3>
+                    <p class="text__desc">온순한 성격으로 길들이기 쉬워서 많은 사람들이 앵무새를 처음 접할 때 많이 추천하는 종 중 하나입니다. 겁이 많고 소심한 것이 특징입니다.</p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">코뉴어</h3>
+                    <p class="text__desc">가장 대중적인 앵무새이며, 애교가 많고 사람을 잘 따르는 앵무새 중 손꼽힙니다. 주로 좁은 곳이나 틈새를 파고 드는 습성이 있습니다.</p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">장미앵무</h3>
+                    <p class="text__desc">한국에서 많이 키우는 종류 중 하나이며, 화려한 색채 때문에 애완용으로 인기가 많습니다. 하지만 겁이 많고 예민한 성격에 자주 데리고 놀면 스트레스를 받습니다.</p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">모란앵무</h3>
+                    <p class="text__desc">모란앵무는 성격이 매우 활달하고 호기심이 많아 부리를 써서 탐색하는 것을 좋아합니다. 주인과 유대감이 매우 깊을 때는 주인의 옆에 꼭 붙어 있는 것이 특징입니다.</p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+            </div>
+        </section>
+        <!-- //textType -->
+    </main>
+    <!-- //mainType -->
+    
+    <footer id="footerType" class="footer__wrap nexon section gray">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="#">웹표준 사이트</a></li>
+                        <li><a href="#">반응형 사이트</a></li>
+                        <li><a href="#">패럴랙스 사이트</a></li>
+                        <li><a href="#">포트폴리오 사이트</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>헤더 영역</h3>
+                    <ul>
+                        <li><a href="#">메뉴 유형01</a></li>
+                        <li><a href="#">메뉴 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>슬라이드 영역</h3>
+                    <ul>
+                        <li><a href="#">슬라이드 유형01</a></li>
+                        <li><a href="#">슬라이드 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>이미지 영역</h3>
+                    <ul>
+                        <li><a href="#">이미지 유형01</a></li>
+                        <li><a href="#">이미지 유형02</a></li>
+                        <li><a href="#">이미지/텍스트 유형01</a></li>
+                        <li><a href="#">이미지/텍스트 유형02</a></li>
+                        <li><a href="#">텍스트 유형01</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>컨텍츠 영역</h3>
+                    <ul>
+                        <li><a href="#">카드 유형01</a></li>
+                        <li><a href="#">카드 유형02</a></li>
+                        <li><a href="#">카드 유형03</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>푸터 영역</h3>
+                    <ul>
+                        <li><a href="#">푸터 메뉴 유형01</a></li>
+                        <li><a href="#">푸터 컨택트 유형02</a></li>
+                        <li><a href="#">푸터 이메일 유형03</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__right">
+                2022 Webstoryboy. Portfolio is Power<br>
+                All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- //footerType -->
+
+    <script src="assets/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,        //슬라이드 버튼을 눌러도 슬라이드가 이후에 계속 움직임
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+        });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStop.style.display = "block";
+            btnStart.style.display = "none";
+        });
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("overlay");
+            document.body.classList.toggle("fixed");
+        });
+
+        btnMenuList.forEach((list) => {
+            list.addEventListener("click", () => {
+                btnHam.classList.remove("active");
+                btnMenu.classList.remove("overlay");
+                document.body.classList.remove("fixed");
+            });
+        });
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if(width > 1300){
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
+        });
+    </script>
+    <script>
+        //메뉴페이지 이동시 활성화
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.offsetTop || document.documentElement.scrollTop;
+
+            document.querySelectorAll(".content__item").forEach((element, index) => {
+                if(scrollTop >= element.offsetTop - 600) {
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".header__menu li:nth-child(" + (index+1) + ")").classList.add("active")
+                };
+                    
+            })
+        })
+
+        //스크롤 이동
+        document.querySelectorAll(".header__menu li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        
+
+
+    </script>
+</body>
+</html>

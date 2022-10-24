@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기(이미지 유형 - 01)</h2>
+            <p class="t_desc2">
+                이미지가 삽입된 형식의 사이트를 만들 수 있습니다.
+            </p>
+            <hr>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2dVMs09Xd6Iw5jh2gVK4y4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D469%253A137" allowfullscreen></iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>/* imageType */
+.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image {
+    width: 49%;
+    height: 370px;
+    color: #fff;
+    padding: 200px 30px 30px 30px;
+    box-sizing: border-box;
+}
+.image.img1 {
+    background: url(img/imageType01_01.jpg) no-repeat center;
+}
+.image.img2 {
+    background: url(img/imageType01_02.jpg) no-repeat center;
+}
+.image__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.image__desc {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.image__btn {
+    font-size: 16px;
+    color: #fff;
+    background-color: #B45A30;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.image__btn.black {
+    background-color: #21201c;
+}
+</code></pre>
+            </div>
+            <p class="t_box">
+                .image.img1 { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;background: url(img/imageType01_01.jpg) no-repeat center;<br>
+                }<br>
+                .image.img2 {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;background: url(img/imageType01_02.jpg) no-repeat center;<br>
+                }<br>
+            </p>
+            <p class="t_desc">
+                이미지를 백그라운드 방식으로 넣을 수 있습니다.
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="imageType01" class="image__wrap nexon section"&gt;
+    &lt;h2&gt;고양이 알아보기&lt;/h2&gt;
+    &lt;p&gt;고양이에 대해서 알아보는 시간을 가집시다.&lt;/p&gt;
+    &lt;div class="image__inner container"&gt;
+        &lt;article class="image img1"&gt;
+            &lt;h3 class="image__title"&gt;고양이 알아보기&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;고양이에 대해서 알아보는 즐거운 시간이 되시길 바랍니다. 언제 어디서나 귀엽습니다. 귀여운 고양이에 대해서 알아보는 시간을 가질 거랍니다. 고양이 최고...&lt;/p&gt;
+            &lt;a class="image__btn" href="/" title="자세히보기"&gt;자세히 보기&lt;/a&gt;
+        &lt;/article&gt;
+        &lt;article class="image img2"&gt;
+            &lt;h3 class="image__title"&gt;고양이 알아보기&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;고양이에 대해서 알아보는 즐거운 시간이 되시길 바랍니다. 언제 어디서나 귀엽습니다. 귀여운 고양이에 대해서 알아보는 시간을 가질 거랍니다. 고양이 최고...&lt;/p&gt;
+            &lt;a class="image__btn black" href="/" title="자세히보기"&gt;자세히 보기&lt;/a&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;   
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/imageType/imageType01.22.08.17.html"></iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/site/imageType/imageType01.22.08.17.html" target="_blank">원본 소스 보기</a>
+                <a href="https://jwor12427.github.io/coding/site/imageType/imageType01.22.08.17.html" target="_blank">페이지 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
