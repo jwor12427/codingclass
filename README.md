@@ -1,6 +1,6 @@
 # codingclass
 
-## 메인
+## 메인입니다
 https://jwor12427.github.io/codingclass/index.html
 
 ## 자바스크립트 페이지
