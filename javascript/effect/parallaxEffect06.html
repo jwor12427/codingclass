@@ -664,15 +664,246 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code>
+<pre><code>//forEach로 글씨 쪼개기
+document.querySelectorAll(".split").forEach(text => {
+    let splitText = text.innerText;
+    let splitWrap = splitText.split('').join('</span><span aria-hidden="true">');
+    splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
+    text.innerHTML = splitWrap
+    text.setAttribute("aria-label",splitText);      //접근성을 위하여
+});
+    
+//스크롤 움직임
+function scroll(){
+    let scrollTop = window.scrollY;
+    document.querySelector("#parallax__info .scroll span").innerText = Math.round(scrollTop);   //scrollTop값 구하기(숫자로 보여줌)
+    
+    //CSS 클래스 추가(비효율성)
+    // document.querySelectorAll(".content__item").forEach(item => {       //영역을 split로 잡으면 값이 같아져서 그 위의 부모박스를 대상으로 잡음
+    //     if(scrollTop >= item.offsetTop){                
+    //         item.querySelector(".split").classList.add("show");     //scroll 내릴때마다 split에 show가 붙음
+    //     }
+    // })
+
+    //스크립트로 애니메이션
+    document.querySelectorAll(".content__item").forEach(item => {
+        if(scrollTop >= item.offsetTop){
+            item.querySelectorAll(".split span").forEach((span, index) => {
+                // span.style.transitionDelay = index + "00ms";
+                // span.classList.add("show"); 
+
+                setTimeout(() => {
+                    span.classList.add("show");   
+                },index*100)                        //split안에 있는 span에 show가 붙음 
+            });
+        }
+    })
+    requestAnimationFrame(scroll);
+
+    //첫번째 span --> 0.01
+    //두번째 span --> 0.02
+    //세번째 span --> 0.03
+    //네번째 span --> 0.04(늘어나는 값은 index에 있음)
+}
+scroll();
 </code></pre>
                         </div>
                         <div>
-<pre><code>
+<pre><code>&lt;main id="parallax__cont">
+    &lt;div id="contents">
+        &lt;section id="section1" class="content__item">
+            &lt;span class="content__item__num">01&lt;/span>
+            &lt;h2 class="content__item__title">section1&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc split style1">인간은 죽음을 두려워한다. 그것은 생을 사랑하기 때문이다.&lt;/p>
+        &lt;/section>
+        &lt;!-- //section1 -->
+        
+        &lt;section id="section2" class="content__item">
+            &lt;span class="content__item__num">02&lt;/span>
+            &lt;h2 class="content__item__title">section2&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc split style2">말을 많이 하는 것과 말을 잘하는 것은 다르다.&lt;/p>
+        &lt;/section>
+        &lt;!-- //section2 -->
+        
+        &lt;section id="section3" class="content__item">
+            &lt;span class="content__item__num">03&lt;/span>
+            &lt;h2 class="content__item__title">section3&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc split style3">오늘 할 수 있는 일에 전력을 다하라, 그러면 내일에는 한 걸음 더 진보한다.&lt;/p>
+        &lt;/section>
+        &lt;!-- //section3 -->
+        
+        &lt;section id="section4" class="content__item">
+            &lt;span class="content__item__num">04&lt;/span>
+            &lt;h2 class="content__item__title">section4&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc split style4">최대 다수의 최대 행복을 얻는 행동이 최선이다.&lt;/p>
+        &lt;/section>
+        &lt;!-- //section4 -->
+        
+        &lt;section id="section5" class="content__item">
+            &lt;span class="content__item__num">05&lt;/span>
+            &lt;h2 class="content__item__title">section5&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc split style5">나는 죽음을 겁내지 않는다. 다만 의무를 다하지 않고 사는 것을 겁낸다.&lt;/p>
+        &lt;/section>
+        &lt;!-- //section5 -->
+        
+        &lt;section id="section6" class="content__item">
+            &lt;span class="content__item__num">06&lt;/span>
+            &lt;h2 class="content__item__title">section6&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc split style6">모든 날 중 가장 완전히 잃어버린 날은 웃지 않는 날이다.&lt;/p>
+        &lt;/section>
+        &lt;!-- //section6 -->
+        
+        &lt;section id="section7" class="content__item">
+            &lt;span class="content__item__num">07&lt;/span>
+            &lt;h2 class="content__item__title">section7&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc split style6">열의 없이 성취 된 위업이란 아직 하나도 없다.&lt;/p>
+        &lt;/section>
+        &lt;!-- //section7 -->
+        
+        &lt;section id="section8" class="content__item">
+            &lt;span class="content__item__num">08&lt;/span>
+            &lt;h2 class="content__item__title">section8&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc split style6">독수리는 마지막 성공을 거둘 때까지 온 생명을 다한다.&lt;/p>
+        &lt;/section>
+        &lt;!-- //section8 -->
+        
+        &lt;section id="section9" class="content__item">
+            &lt;span class="content__item__num">09&lt;/span>
+            &lt;h2 class="content__item__title">section9&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc split style6">행운은 자주 문을 두드리나 미련한 자는 그것을 받아들이지 않는다.&lt;/p>
+        &lt;/section>
+        &lt;!-- //section9 -->
+    &lt;/div>
+&lt;/main>
 </code></pre>
                         </div>
                         <div>
-<pre><code>
+<pre><code>/* 순차적으로 나타나기 */
+.style1.split span {
+    opacity: 0;
+    transition: all 0.6s ecubic-bezier(0.02, 0.35, 0.55, 1.1);
+    display: inline-block;
+    min-width: 1vw;
+}
+.style1.split span.show {
+    opacity: 1;
+}
+.style2.split span {
+    opacity: 0;
+    transform: translateY(100px);
+    display: inline-block;
+    transition: all 0.6s ease-in-out;
+    min-width: 1vw;
+}
+.style2.split span.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.style3.split span {
+    opacity: 0;
+    transform: translateY(100px) rotate(360deg);
+    display: inline-block;
+    transition: all 0.6s ease-in;
+    min-width: 1vw;
+}
+.style3.split span.show {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+}
+.style4.split span {
+    opacity: 0;
+    display: inline-block;
+    min-width: 1vw;
+}
+.style4.split span.show {
+    animation: wobble 1s 1 ease-in forwards;    /* forwards 다시 돌아가지않고 그상태로 멈추라는 의미 */
+}
+@keyframes wobble {
+    0%   {transform: translate3d(0, 0, 0); opacity: 0;}
+    15%  {transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);}
+    30%  {transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);}
+    45%  {transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);}
+    60%  {transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);}
+    75%  {transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);}
+    100% {transform: translate3d(0, 0, 0); opacity: 1;}
+}
+.style5.split span {
+    opacity: 0;
+    display: inline-block;
+    min-width: 1vw;
+}
+.style5.split span.show {
+    animation: heartBeat 1s 1 ease-in forwards;
+}
+@keyframes heartBeat {
+    0% {transform: scale(1); opacity: 0;}
+    14% {transform: scale(1.3);}
+    28% {transform: scale(1);}
+    42% {transform: scale(1.3);}
+    100% {transform: scale(1); opacity: 1;}
+}
+.style6.split span {
+    opacity: 0;
+    display: inline-block;
+    min-width: 1vw;
+}
+.style6.split span.show {
+    animation: flipInX 1s 1 ease-in forwards;
+}
+@keyframes flipInX {
+    0% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: perspective(400px);
+        opacity: 1;
+    }
+}
 </code></pre>
                         </div>
                     </div>
