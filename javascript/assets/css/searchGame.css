@@ -18,8 +18,9 @@
 #search__game {
 	width: 70%;
 	height: 80vh;
-	top: 10%;
-	margin: 0 auto;
+	position: absolute;
+	left: 500px;
+	top: 100px;
 	color: black;
 	background-color: #ffec63;
 	background-image: linear-gradient(
