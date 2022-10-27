@@ -105,5 +105,5 @@ shullfedCard();
 memoryCards.forEach((card) => {
 	setTimeout(() => {
 		card.addEventListener("click", flipCard);
-	}, 500);
+	}, 2500);
 });

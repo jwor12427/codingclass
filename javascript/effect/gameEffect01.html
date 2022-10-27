@@ -1096,7 +1096,9 @@
 
 			<div class="memory__wrap">
 				<div class="memory__inner">
-					<div class="memory__header"></div>
+					<div class="memory__header">
+						<h2>MEMORY GAME</h2>
+					</div>
 					<div class="memory__card">
 						<ul class="cards">
 							<li>
@@ -1382,7 +1384,7 @@
 				if (Min < 10) Min = `0${Min}`;
 				let Hor = Math.floor(now.getHours() % 12);
 				if (Hor < 10) Hor = `0${Hor}`;
-				if ((Hor = 12)) Hor = `${Hor}`;
+				// if ((Hor = 12)) Hor = `${Hor}`;
 				let HorA = now.getHours();
 				let Hor1 = HorA >= 12 ? `오후 ` : `오전 `;
 				const nowTime =
