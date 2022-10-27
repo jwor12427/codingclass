@@ -1,0 +1,114 @@
+/** @format */
+
+.memory__wrap {
+}
+.memory__inner {
+	width: 700px;
+	height: 750px;
+	border: 3px solid #f56fad;
+	background: #000;
+	position: absolute;
+	left: 300px;
+	top: 100px;
+	border-radius: 20px;
+	animation: flicker 1.5s infinite alternate;
+}
+.memory__header {
+	border: 3px solid #f56fad;
+	box-shadow: 0px 0px 4px 2px rgb(16 81 139 / 78%),
+		inset 0px 0px 4px 2px rgb(16 81 139 / 78%);
+	margin-bottom: 2px;
+	min-height: 50px;
+	width: 100%;
+	background: #000;
+	border-radius: 20px 20px 0 0;
+}
+.memory__card {
+	padding: 30px;
+}
+.memory__card .cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.memory__card .cards li {
+	list-style: none;
+	width: 150px;
+	height: 150px;
+	position: relative;
+	transform-style: preserve-3d;
+	perspective: 500px;
+}
+.memory__card .cards li img {
+	width: 100%;
+}
+.memory__card .cards li .view {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #f6f6f6;
+	backface-visibility: hidden;
+	padding: 20%;
+	border-radius: 10px;
+	transition: all 0.5s;
+	user-select: none;
+	pointer-events: none;
+}
+
+.memory__card .cards li .front img {
+	width: 95%;
+}
+.memory__card .cards li .front {
+	transform: rotateY(0deg);
+}
+.memory__card .cards li.flip .front {
+	transform: rotateY(180deg);
+}
+.memory__card .cards li .back {
+	transform: rotateY(-180deg);
+}
+.memory__card .cards li.flip .back {
+	transform: rotateY(0deg);
+}
+@keyframes flicker {
+	0%,
+	19%,
+	21%,
+	23%,
+	25%,
+	54%,
+	56%,
+	100% {
+		box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff, 0 0 2rem #7900ff,
+			inset 0 0 2rem #7900ff, 0 0 4rem #7900ff, inset 0 0 4rem #7900ff;
+	}
+}
+.memory__card .cards li.shakeX {
+	animation: headShake 1s 1 ease-in-out;
+}
+
+@keyframes headShake {
+	0% {
+		transform: translateX(0);
+	}
+
+	6.5% {
+		transform: translateX(-6px) rotateY(-9deg);
+	}
+
+	18.5% {
+		transform: translateX(5px) rotateY(7deg);
+	}
+
+	31.5% {
+		transform: translateX(-3px) rotateY(-5deg);
+	}
+
+	43.5% {
+		transform: translateX(2px) rotateY(3deg);
+	}
+
+	50% {
+		transform: translateX(0);
+	}
+}

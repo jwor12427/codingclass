@@ -267,7 +267,7 @@ function playListMusic() {
 			audioTag.innerText = adDuration; //오디오 길이 값 출력
 		}
 		if (musicListAll[i].getAttribute("data-index") == musicIndex) {
-			//련재 뮤직 인덱스랑 리스트 인덱스 값이 같으면 재생
+			//현재 뮤직 인덱스랑 리스트 인덱스 값이 같으면 재생
 			musicListAll[i].classList.add("playing"); //클래스 playing 추가
 			audioTag.innerText = "재생중"; //재생중일 경우 재생중 멘트 추가
 		}
