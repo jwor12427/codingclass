@@ -1097,7 +1097,10 @@
 			<div class="memory__wrap">
 				<div class="memory__inner">
 					<div class="memory__header">
-						<h2>MEMORY GAME</h2>
+						<h2>
+							MEMORY GAME
+							<p class="point">점수 : <span>100</span></p>
+						</h2>
 					</div>
 					<div class="memory__card">
 						<ul class="cards">
@@ -1328,6 +1331,22 @@
 						</ul>
 						<!-- //memory__card -->
 					</div>
+					<div class="memory__close__btn">X</div>
+					<div class="memory__start__info show">
+						<h3>게임 규칙</h3>
+						<ul class="memory__info__desc">
+							<li>01. 시작버튼을 누르면 모든 카드가 보여집니다.</li>
+							<li>02. 뒤집어진 카드의 짝을 맞추면 점수는 유지 됩니다.</li>
+							<li>03. 뒤집은 카드의 짝이 틀릴 경우 점수는 감점!</li>
+							<li>04. 제한시간은 없습니다! 즐겁게 즐겨주세요~</li>
+						</ul>
+						<div class="memory__start__btn">게임 START!</div>
+					</div>
+					<div class="memory__over">
+						<h3>YOU WIN!</h3>
+						<div class="memory__over__msg"><span>0</span></div>
+						<div class="memory__re__btn">REPLAY?</div>
+					</div>
 				</div>
 			</div>
 			<!-- //메모리 게임 -->
@@ -1497,6 +1516,10 @@
 				//시간 정지
 				clearInterval(timeInterval);
 				searchStart.style.display = "block";
+			});
+			//메모리게임 열기
+			document.querySelector(".icon3").addEventListener("click", () => {
+				document.querySelector(".memory__wrap").classList.add("show");
 			});
 		</script>
 	</body>

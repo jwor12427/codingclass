@@ -1,6 +1,10 @@
 /** @format */
 
 .memory__wrap {
+	display: none;
+}
+.memory__wrap.show {
+	display: block;
 }
 .memory__inner {
 	width: 700px;
@@ -29,6 +33,12 @@
 	color: #eeeeee;
 	text-shadow: 0px 0px 5px rgb(18, 93, 152/ 83%);
 	margin-left: 20px;
+}
+.memory__header h2 .point {
+	color: #eeeeee;
+	display: inline-block;
+	float: right;
+	margin-right: 40px;
 }
 .memory__card {
 	padding: 30px;
@@ -76,6 +86,123 @@
 }
 .memory__card .cards li.flip .back {
 	transform: rotateY(0deg);
+}
+
+/* memory__start__info */
+.memory__start__info {
+	width: 400px;
+	background: #000;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 30px 30px 70px;
+	border-radius: 10px;
+	border: 3px solid #fff;
+	animation: flicker 1.5s infinite alternate;
+	display: none;
+}
+.memory__start__info.show {
+	display: block;
+}
+.memory__start__info h3 {
+	color: #fff;
+	text-align: center;
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+.memory__info__desc li {
+	list-style: none;
+	color: #fff;
+	font-size: 20px;
+	line-height: 1.6;
+	word-break: keep-all;
+}
+.memory__start__btn {
+	display: inline-block;
+	font-size: 24px;
+	font-weight: 900;
+	text-align: center;
+	color: #fff;
+	background: #000;
+	border-radius: 10px;
+	padding: 12px 25px 14px;
+	border: 3px solid #fff;
+	animation: flicker3 1.5s infinite alternate;
+	position: absolute;
+	left: 50%;
+	bottom: -30px;
+	transform: translateX(-50%);
+}
+.memory__start__btn:hover {
+	color: #a760ff;
+}
+/* memory__over */
+.memory__over {
+	width: 400px;
+	background: #000;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 50px 30px 70px;
+	border-radius: 10px;
+	border: 3px solid #fff;
+	animation: flicker 1.5s infinite alternate;
+	display: none;
+}
+.memory__over.show {
+	display: block;
+}
+.memory__over h3 {
+	color: #fff;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 24px;
+}
+.memory__over__msg {
+	font-size: 20px;
+	font-weight: normal;
+	color: #fff;
+	text-align: center;
+	line-height: 1.4;
+}
+.memory__re__btn {
+	display: inline-block;
+	font-size: 24px;
+	font-weight: 900;
+	text-align: center;
+	color: #fff;
+	background: #000;
+	border-radius: 10px;
+	padding: 12px 24px 14px;
+	border: 3px solid #fff;
+	animation: flicker3 1.5s infinite alternate;
+	position: absolute;
+	left: 50%;
+	bottom: -30px;
+	transform: translateX(-50%);
+}
+.memory__re__btn:hover {
+	color: #a760ff;
+}
+.memory__close__btn {
+	color: #fff;
+	font-size: 30px;
+	font-weight: 900;
+	text-align: center;
+	padding: 5px 16px 6px 19px;
+	border: 3px solid #a760ff;
+	border-radius: 50%;
+	background: #000;
+	position: absolute;
+	top: -70px;
+	left: 50%;
+	transform: translateX(-50%);
+	animation: flicker3 1.5s infinite alternate;
+}
+.memory__close__btn:hover {
+	color: #a760ff;
 }
 @keyframes flicker {
 	0%,

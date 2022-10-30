@@ -5,11 +5,19 @@
 // 03 두개의 카드 뒤집기 확인하기(첫번째, 두번째)
 
 const memoryWrap = document.querySelector(".memory__wrap");
+const memoryInner = document.querySelector(".memory__card");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
+const memoryOverInfo = document.querySelector(".memory__over");
+const memoryOverInfoh3 = document.querySelector(".memory__over h3");
+const memoryOver = memoryWrap.querySelector(".memory__over__msg");
+const memoryOverScore = memoryWrap.querySelector(".memory__over__msg span");
+const memoryRE = memoryWrap.querySelector(".memory__re__btn");
+const memoryScore = memoryWrap.querySelector(".point span");
 
 let cardOne, cardTwo;
 let disableDeck = false;
 let matchedCard = 0;
+let matchScore = 100;
 
 let sound = [
 	"../assets/audio/match.mp3",
@@ -51,7 +59,13 @@ function matchCards(img1, img2) {
 		matchedCard++;
 
 		if (matchedCard == 8) {
-			alert("You Win!!");
+			//모든 카드 뒤집었을 때
+			soundSuccess.play();
+			memoryInner.style.pointerEvents = "none";
+			setTimeout(() => {
+				memoryOverInfo.classList.add("show");
+				memoryOverScore.innerHTML = `<span>${matchScore}점을 획득하셨습니다!</span>`;
+			}, 500);
 		}
 		cardOne.removeEventListener("click", flipCard);
 		cardTwo.removeEventListener("click", flipCard);
@@ -72,7 +86,16 @@ function matchCards(img1, img2) {
 			disableDeck = false;
 		}, 1600);
 		soundUnMatch.play();
+		matchScore = matchScore - 5;
+
+		if (matchScore == 0) {
+			memoryInner.style.pointerEvents = "none";
+			memoryOverInfo.classList.add("show");
+			memoryOverInfoh3.innerHTML = "Game Over....";
+			memoryOverScore.innerHTML = `<span>${matchScore}점을 획득하셨습니다!</span>`;
+		}
 	}
+	memoryScore.innerText = matchScore;
 }
 
 //카드 섞기
@@ -95,15 +118,54 @@ function shullfedCard() {
 			card.classList.remove("flip");
 		}, 4000);
 
+		setTimeout(() => {
+			memoryInner.style.pointerEvents = "auto";
+		}, 200 * index + 5000);
+
 		let imgTag = card.querySelector(".back img");
 		imgTag.src = `../assets/img/icon/memory_icon0${arr[index]}.svg`;
 	});
 }
-shullfedCard();
+
+const memoryStart = document.querySelector(".memory__start__info");
+const memoryStartBtn = document.querySelector(".memory__start__btn");
+
+//게임 시작
+memoryStartBtn.addEventListener("click", () => {
+	memoryStart.classList.remove("show");
+	shullfedCard();
+	soundSuccess.play();
+});
+//리셋
+function memoryReset() {
+	memoryStart.classList.add("show");
+	cardOne = cardTwo = "";
+	disableDeck = false;
+	matchedCard = 0;
+	matchScore = 100;
+	memoryScore.innerText = "0";
+	memoryCards.forEach((card) => {
+		card.classList.remove("flip");
+	});
+}
+
+//리셋버튼
+memoryRE.addEventListener("click", () => {
+	memoryOverInfo.classList.remove("show");
+	memoryReset();
+});
 
 //카드 클릭
 memoryCards.forEach((card) => {
 	setTimeout(() => {
 		card.addEventListener("click", flipCard);
-	}, 2500);
+	}, 1000);
+});
+
+//게임 종료
+const memoryClose = document.querySelector(".memory__close__btn");
+
+memoryClose.addEventListener("click", () => {
+	memoryWrap.classList.remove("show");
+	memoryReset();
 });
