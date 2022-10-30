@@ -157,9 +157,7 @@ memoryRE.addEventListener("click", () => {
 
 //카드 클릭
 memoryCards.forEach((card) => {
-	setTimeout(() => {
-		card.addEventListener("click", flipCard);
-	}, 1000);
+	card.addEventListener("click", flipCard);
 });
 
 //게임 종료

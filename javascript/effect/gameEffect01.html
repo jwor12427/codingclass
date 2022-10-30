@@ -1521,6 +1521,21 @@
 			document.querySelector(".icon3").addEventListener("click", () => {
 				document.querySelector(".memory__wrap").classList.add("show");
 			});
+
+			//인덱스값 높이기
+			const gameBox = document.querySelectorAll(".game_box > div");
+
+			function zindex() {
+				gameBox.forEach((e) => {
+					e.style.zindex = "10";
+				});
+			}
+			gameBox.forEach((e) => {
+				e.addEventListener("click", () => {
+					zindex();
+					e.style.zindex = "1000";
+				});
+			});
 		</script>
 	</body>
 </html>

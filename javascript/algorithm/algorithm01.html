@@ -1,0 +1,137 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>자바스크립트 : 기본 규칙</title>
+		<link
+			rel="stylesheet"
+			href="../assets/css/style.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/dracula.css"
+		/>
+	</head>
+	<body>
+		<header id="header">
+			<h1><a href="../index.html">Javascript</a></h1>
+			<nav class="header_nav">
+				<ul>
+					<li><a href="../javascript01.html">데이터 저장하기</a></li>
+					<li><a href="../javascript02.html">데이터 불러오기</a></li>
+					<li><a href="../javascript03.html">데이터 실행하기</a></li>
+					<li><a href="../javascript04.html">데이터 제어하기</a></li>
+				</ul>
+				<ul>
+					<li><a href="../javascript05.html">문자열 객체</a></li>
+					<li><a href="../javascript06.html">배열 객체</a></li>
+					<li><a href="../javascript07.html">수학 객체</a></li>
+					<li><a href="../javascript08.html">숫자 객체</a></li>
+					<li><a href="../javascript09.html">브라우저 객체</a></li>
+					<li><a href="../javascript10.html">요소 객체</a></li>
+					<li><a href="../javascript11.html">이벤트 객체</a></li>
+				</ul>
+				<ul class="study">
+					<li><a href="../study/basic.html">기본 규칙</a></li>
+					<li><a href="../study/operator.html">연산자</a></li>
+					<li><a href="../study/for.html">반복문</a></li>
+					<li><a href="../study/if.html">조건문</a></li>
+					<li><a href="../study/type.html">데이터 타입</a></li>
+					<li><a href="../study/function.html">함수</a></li>
+					<li><a href="../study/var.html">지역변수/전역변수</a></li>
+					<li><a href="../study/element.html">요소 선택</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- //header -->
+		<main id="main">
+			<div class="document">
+				<h2 class="t_tit">🍕짝수와 홀수 구하기</h2>
+
+				<hr />
+
+				<h3 class="t_tit2">🍕문제 설명</h3>
+
+				<p class="t_desc2">
+					정수 num이 짝수일 경우 "Even"을 반환하고 홀수인 경우 "Odd"를 반환하는
+					함수, solution을 완성해주세요.
+				</p>
+				<h3 class="t_tit2">🍕제한 조건</h3>
+
+				<p class="t_desc2">
+					🍕num은 int 범위의 정수입니다. <br />
+					🍕0은 짝수입니다.
+				</p>
+
+				<h3 class="t_tit2">입출력 예시</h3>
+				<table class="t_table">
+					<thead>
+						<tr>
+							<th>num</th>
+							<th>return</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ce">3</td>
+							<td class="ce">"Odd"</td>
+						</tr>
+						<tr>
+							<td class="ce">4</td>
+							<td class="ce">"Even"</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<hr />
+
+				<h3 class="t_tit2">🍕내가 한 풀이</h3>
+				<p class="t_desc">
+					if()를 사용하여 num을 2로 나누었을때, 나머지가 0이면 "Even", 그렇지
+					않을 경우 "Odd"를 반환하도록 하였습니다.
+				</p>
+				<div class="t_code">
+					<pre><code>const num = 3;
+function solution(num) {
+    var answer = '';
+    if(num % 2 == 0){
+        answer = "Even";
+    } else {
+        answer = "Odd";
+    }
+    return answer;
+}
+solution(num);
+</code></pre>
+				</div>
+				<h3 class="t_tit2">🍕다른 풀이</h3>
+				<p class="t_desc">삼항연산자를 이용할 경우 한줄로 할 수 있습니다.</p>
+				<div class="t_code">
+					<pre><code>function evenOrOdd(num) {
+    return num % 2 ? "Odd" : "Even";
+    }
+</code></pre>
+				</div>
+			</div>
+		</main>
+		<!-- //main -->
+		<footer id="footer">
+			<a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+		</footer>
+		<!-- //footer -->
+		<script src="../assets/js/highlight.min.js"></script>
+		<script>
+			hljs.highlightAll();
+		</script>
+	</body>
+</html>
