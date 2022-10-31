@@ -143,7 +143,7 @@ function memoryReset() {
 	disableDeck = false;
 	matchedCard = 0;
 	matchScore = 100;
-	memoryScore.innerText = "0";
+	memoryScore.innerText = "100";
 	memoryCards.forEach((card) => {
 		card.classList.remove("flip");
 	});

@@ -1362,16 +1362,28 @@
 			$(".icon1").draggable({
 				drag: function () {
 					$(".mouse__cursor img").attr("src", "../assets/img/game_mouse.svg");
+					$(this).css("z-index", "1000");
+				},
+				stop: function () {
+					$(this).css("z-index", "100");
 				},
 			});
 			$(".icon2").draggable({
 				drag: function () {
 					$(".mouse__cursor img").attr("src", "../assets/img/game_mouse02.svg");
+					$(this).css("z-index", "1000");
+				},
+				stop: function () {
+					$(this).css("z-index", "100");
 				},
 			});
 			$(".icon3").draggable({
 				drag: function () {
 					$(".mouse__cursor img").attr("src", "../assets/img/game_mouse03.svg");
+					$(this).css("z-index", "1000");
+				},
+				stop: function () {
+					$(this).css("z-index", "100");
 				},
 			});
 			$(".icon4").draggable({
@@ -1522,20 +1534,20 @@
 				document.querySelector(".memory__wrap").classList.add("show");
 			});
 
-			//인덱스값 높이기
-			const gameBox = document.querySelectorAll(".game_box > div");
+			// //인덱스값 높이기
+			// const gameBox = document.querySelectorAll(".game_box > div");
 
-			function zindex() {
-				gameBox.forEach((e) => {
-					e.style.zindex = "10";
-				});
-			}
-			gameBox.forEach((e) => {
-				e.addEventListener("click", () => {
-					zindex();
-					e.style.zindex = "1000";
-				});
-			});
+			// function zindex() {
+			// 	gameBox.forEach((e) => {
+			// 		e.style.zindex = "10";
+			// 	});
+			// }
+			// gameBox.forEach((e) => {
+			// 	e.addEventListener("click", () => {
+			// 		zindex();
+			// 		e.style.zindex = "1000";
+			// 	});
+			// });
 		</script>
 	</body>
 </html>
