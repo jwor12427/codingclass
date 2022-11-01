@@ -99,7 +99,7 @@
 		</main>
 		<!-- //main -->
 		<footer id="footer">
-			<div class="modal__wrap">
+			<div class="window__wrap">
 				<div class="modal__btn">
 					<img
 						src="../assets/img/code_btn.svg"
@@ -107,40 +107,66 @@
 					/>
 					<span>소스 보기</span>
 				</div>
-				<div class="modal__cont">
-					<div class="modal__box">
-						<div class="cont">
-							<iframe
-								width="100%"
-								height="100%"
-								src="https://github1s.com/jwor12427/codingclass/blob/HEAD/javascript/effect/gameEffect01.html"
-							></iframe>
+				<div class="window__cont">
+					<div class="window__box">
+						<div class="title_bar">
+							<div class="minimize">
+								<div class="symbol"></div>
+							</div>
+							<div class="maximize">
+								<div class="symbol"></div>
+							</div>
+							<div class="close">
+								<div class="symbol"></div>
+							</div>
 						</div>
-					</div>
-					<div class="modal__close">
-						<svg
-							width="16"
-							height="16"
-							viewBox="0 0 16 16"
-							fill="none"
-							aria-hidden="true"
-							focusable="false"
-						>
-							<path
-								d="M12.5 3.5L3.5 12.5"
-								stroke="currentColor"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							></path>
-							<path
-								d="M12.5 12.5L3.5 3.5"
-								stroke="currentColor"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							></path>
-						</svg>
+						<div class="menu__bar">
+							<span class="active">소스보기</span>
+						</div>
+						<div class="window__container">
+							<div class="content">
+								<div class="main">
+									<div class="cont">
+										<div class="active">
+											<ul>
+												<li>
+													<a
+														href="https://github.com/jwor12427/codingclass/blob/main/javascript/effect/gameEffect01.html"
+														target="_blank"
+														>HTML보러가기</a
+													>
+												</li>
+												<li>
+													<a
+														href="https://github.com/jwor12427/codingclass/blob/main/javascript/assets/css/game.css"
+														target="_blank"
+														>CSS보러가기</a
+													>
+												</li>
+												<li>
+													<a
+														href="https://github.com/jwor12427/codingclass/blob/main/javascript/assets/js/music.js"
+														target="_blank"
+														>Javascript보러가기</a
+													>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="scroll">
+									<div class="start"></div>
+									<div class="progress"></div>
+									<div class="end"></div>
+								</div>
+							</div>
+							<div class="scroll__row">
+								<div class="start"></div>
+								<div class="progress"></div>
+								<div class="end"></div>
+							</div>
+						</div>
+						<div class="window__footer"></div>
 					</div>
 				</div>
 			</div>
@@ -1401,10 +1427,11 @@
 					$(".mouse__cursor img").attr("src", "../assets/img/game_mouse06.svg");
 				},
 			});
-			$(".music__wrap").draggable();
+			$(".music__inner").draggable();
 			$(".modal__btn").draggable();
 			$("#search__game").draggable();
-			$(".memory__wrap").draggable();
+			$(".memory__inner").draggable();
+			$(".window__cont").draggable();
 			//현재시간 표시
 			function printTime() {
 				const clock = document.querySelector(".time");
@@ -1489,22 +1516,10 @@
 				gsap.to(cursor, { duration: 0.1, left: e.pageX - 5, top: e.pageY - 5 });
 			});
 
-			//뮤직 리스트 열고 닫기
-			const colse = document.querySelector(".music__list .close");
-			const listOpen = document.querySelector(".music__control #control-list");
-			const list = document.querySelector(".music__list");
-
-			listOpen.addEventListener("click", () => {
-				list.classList.add("open");
-			});
-			colse.addEventListener("click", () => {
-				list.classList.remove("open");
-			});
-
 			//모달
 			const modalBtn = document.querySelector(".modal__btn");
-			const modalCont = document.querySelector(".modal__cont");
-			const modalClose = document.querySelector(".modal__close");
+			const modalCont = document.querySelector(".window__cont");
+			const modalClose = document.querySelector(".close");
 
 			modalBtn.addEventListener("click", () => {
 				modalCont.classList.add("show");
@@ -1532,6 +1547,7 @@
 			//메모리게임 열기
 			document.querySelector(".icon3").addEventListener("click", () => {
 				document.querySelector(".memory__wrap").classList.add("show");
+				memoryInner.style.pointerEvents = "none";
 			});
 
 			// //인덱스값 높이기

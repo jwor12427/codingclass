@@ -48,6 +48,7 @@
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: 0.5rem;
 	display: none;
+	position: fixed;
 	/* z-index: 3; */
 }
 #search__game.open {
@@ -74,7 +75,7 @@
 	position: relative;
 	position: fixed;
 	width: 70%;
-	/* z-index: 5; */
+	z-index: 1;
 }
 .search__header .dot {
 	width: 15px;

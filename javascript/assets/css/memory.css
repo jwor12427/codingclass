@@ -16,6 +16,7 @@
 	top: 100px;
 	border-radius: 20px;
 	animation: flicker 1.5s infinite alternate;
+	position: fixed;
 }
 .memory__header {
 	border: 2px solid #a760ff;

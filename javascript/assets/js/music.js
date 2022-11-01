@@ -308,4 +308,17 @@ MusicIcon.addEventListener("click", () => {
 
 MusicClose.addEventListener("click", () => {
 	musicWrap.classList.remove("show");
+	pauseMusic();
+});
+
+//뮤직 리스트 열고 닫기
+const colse = document.querySelector(".music__list .close");
+const listOpen = document.querySelector(".music__control #control-list");
+const list = document.querySelector(".music__list");
+
+listOpen.addEventListener("click", () => {
+	list.classList.add("open");
+});
+colse.addEventListener("click", () => {
+	list.classList.remove("open");
 });
