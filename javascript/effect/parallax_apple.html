@@ -17,13 +17,37 @@
 			href="https://webfontworld.github.io/NanumSquareRound/NanumSquareRound.css"
 			rel="stylesheet"
 		/>
+		<link
+			href="https://webfontworld.github.io/recia/ReciaSerifDisplay.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://webfontworld.github.io/lotte/GhanaChocolate.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://webfontworld.github.io/gonggames/EsaManru.css"
+			rel="stylesheet"
+		/>
 		<style>
 			* {
 				margin: 0;
 				padding: 0;
 				box-sizing: border-box;
-				font-family: "NanumSquareRound";
+
 				font-weight: 300;
+			}
+			.font_kor1 {
+				font-family: "NanumSquareRound";
+			}
+			.font_kor2 {
+				font-family: "EsaManru";
+			}
+			.font_en1 {
+				font-family: "ReciaSerifDisplay";
+			}
+			.font_en2 {
+				font-family: "GhanaChocolate";
 			}
 			.fixed {
 				position: fixed;
@@ -45,9 +69,9 @@
 			}
 			/* layout */
 			#contents {
+				height: 10000px;
 			}
 			#section1 {
-				height: 10000px;
 			}
 			#section2 {
 			}
@@ -55,56 +79,81 @@
 			}
 			#section4 {
 			}
-			#section5 {
-			}
-			#section6 {
-			}
 			/* sec1 */
 			.sec1_text1 {
 				font-size: 8vw;
 				white-space: nowrap;
 			}
-			.sec1_text2 {
-				font-size: 8vw;
-				white-space: nowrap;
+			.sec1_text1 > span {
+				display: block;
 			}
-			.sec1_text3 {
-				width: 100%;
-				height: 100vh;
-				background: url(../assets/img/profil.jpg);
-				background-repeat: no-repeat;
-				background-size: cover;
+			.sec1_text1 .tit1 {
+				transform: rotate(-20deg);
 			}
-			.sec1_text4 {
-				width: 50vw;
-				height: 50vw;
+			.sec1_text1 .tit2 {
+				transform: rotate(-20deg);
+			}
+			.sec1_text1 .tit3 {
+				transform: rotate(-20deg);
+			}
+			.arrow1 {
+				animation: arrow-1-bounce 2s ease infinite;
+			}
+			.arrow2 {
+				transform: rotate(102deg);
+				animation: arrow-2-bounce 2s ease infinite;
+			}
+			@keyframes arrow-2-bounce {
+				0%,
+				100% {
+					transform: translate(20%);
+				}
+				35% {
+					transform: translate(20%);
+				}
+				48%,
+				58% {
+					transform: translate3d(1px, 25px, 0);
+				}
+				53% {
+					transform: translate3d(1px, 17px, 0);
+				}
+			}
+			@keyframes arrow-1-bounce {
+				0%,
+				100% {
+					transform: translate(-50%);
+				}
+				35% {
+					transform: translate(-50%);
+				}
+				48%,
+				58% {
+					transform: translate(-50%) translate3d(1px, 25px, 0);
+				}
+				53% {
+					transform: translate(-50%) translate3d(1px, 17px, 0);
+				}
+			}
+			.sec1_bg1 {
+				width: 10vw;
+				height: 10vw;
+				background: #cdfcf6;
 				border-radius: 50%;
-				background: #000;
-				color: #fff;
-				text-align: center;
-				line-height: 50vw;
-				font-size: 8vw;
 			}
-			.sec1_text5 {
-				font-size: 8vw;
-				background: #fff;
+			/* .sec1_bg1::before {
+				content: "";
+				position: absolute;
+				top: 0;
 				width: 100%;
-				height: 100%;
-				text-align: center;
-				line-height: 50vw;
-			}
-			.sec1_text6 {
-				font-size: 8vw;
-			}
-			.sec1_text7 {
-				font-size: 8vw;
-			}
-			.sec1_text8 {
-				font-size: 8vw;
-			}
-			.sec1_text9 {
-				font-size: 8vw;
-				white-space: nowrap;
+				height: 100vw;
+				background-color: #cdfcf6;
+				border-radius: 50%;
+				z-index: -1;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			} */
+			.sec1_bg2 {
 			}
 		</style>
 	</head>
@@ -113,6 +162,56 @@
 		<main id="contents">
 			<section id="section1">
 				<div class="sec1">
+					<div
+						class="sec1_text1 fixed font_en1"
+						data-0="top:40%; opacity:1"
+						data-1700="top:30%; opacity:1"
+						data-1900="top:20%; opacity:1"
+						data-2100="top:10%; opacity:1"
+						data-2300="top:5%; opacity:1"
+						data-2500="top:-5%; opacity:1"
+						data-2800="top:-10%; opacity:1"
+						data-3000="top:-20%; opacity:0"
+					>
+						<img
+							class="arrow1"
+							src="../assets/img/arrow_01.png"
+							alt=""
+						/>
+						<img
+							class="arrow2"
+							src="../assets/img/arrow_02.png"
+							alt=""
+						/>
+						<span class="tit1">MY</span> <span class="tit2">Portfolio</span>
+						<span
+							class="tit3"
+							data-500="marginLeft: 10%;opacity:0"
+							data-700="marginLeft: 30%;opacity:1"
+							data-900="marginLeft: 50%;opacity:1"
+							data-1100="marginLeft: 70%;opacity:1"
+							>GO?</span
+						>
+					</div>
+					<!-- <div
+						class="sec1_text2"
+						data-1000="top:10%; opacity:0"
+						data-1200="top:50%; opacity:1"
+					>
+						GO?
+					</div> -->
+					<!-- <div
+						class="sec1_bg1 fixed"
+						data-900="opacity:0; translate(-50%, -50%);"
+						data-1200="opacity:1; translate(-50%, -50%); width: 10vw; height: 10vw; border-radius: 50%;"
+						data-1500="opacity:1; translate(-50%, -50%); width: 30vw; height: 30vw; border-radius: 50%;"
+						data-1800="opacity:1; translate(-50%, -50%); width: 50vw; height: 50vw; border-radius: 50%;"
+						data-2100="opacity:1; translate(-50%, -50%); width: 80vw; height: 80vw; border-radius: 50%;"
+						data-2400="opacity:1; translate(-50%, -50%); width: 100%; height: 100vw; border-radius: 0;"
+					></div> -->
+					<div class="sec1_bg2 fixed"></div>
+				</div>
+				<!-- <div class="sec1">
 					<div
 						class="sec1_text1 fixed"
 						data-0="top:50%; opacity:1"
@@ -126,7 +225,7 @@
 						data-1000="top:50%; opacity:1; transform: translate(-50%, -50%) scale(1)"
 						data-1500="top:50%; opacity:1; transform: translate(-50%, -50%) scale(0)"
 					>
-						프론트엔드 개발자입니다!
+						프론트엔드 개발자 입니다!
 					</div>
 					<div
 						class="sec1_text3 fixed"
@@ -187,7 +286,7 @@
 					>
 						자신감을 가져요
 					</div>
-				</div>
+				</div> -->
 			</section>
 			<!-- //section1 -->
 			<section id="section2"></section>
