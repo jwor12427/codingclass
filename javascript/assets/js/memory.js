@@ -84,8 +84,9 @@ function matchCards(img1, img2) {
 			cardTwo.classList.remove("shakeX", "flip");
 			cardOne = cardTwo = "";
 			disableDeck = false;
+			soundUnMatch.play();
 		}, 1600);
-		soundUnMatch.play();
+
 		matchScore = matchScore - 5;
 
 		if (matchScore == 0) {
@@ -116,11 +117,9 @@ function shullfedCard() {
 
 		setTimeout(() => {
 			card.classList.remove("flip");
+			card.style.pointerEvents = "auto";
 		}, 4000);
 
-		setTimeout(() => {
-			memoryInner.style.pointerEvents = "auto";
-		}, 200 * index + 5000);
 
 		let imgTag = card.querySelector(".back img");
 		imgTag.src = `../assets/img/icon/memory_icon0${arr[index]}.svg`;
@@ -144,6 +143,7 @@ function memoryReset() {
 	matchedCard = 0;
 	matchScore = 100;
 	memoryScore.innerText = "100";
+	memoryInner.style.pointerEvents = "none";
 	memoryCards.forEach((card) => {
 		card.classList.remove("flip");
 	});
