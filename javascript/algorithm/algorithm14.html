@@ -1,0 +1,146 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>자바스크립트 : 기본 규칙</title>
+		<link
+			rel="stylesheet"
+			href="../assets/css/style.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/dracula.css"
+		/>
+	</head>
+	<body>
+		<header id="header">
+			<h1><a href="../index.html">Javascript</a></h1>
+			<nav class="header_nav">
+				<ul>
+					<li><a href="../javascript01.html">데이터 저장하기</a></li>
+					<li><a href="../javascript02.html">데이터 불러오기</a></li>
+					<li><a href="../javascript03.html">데이터 실행하기</a></li>
+					<li><a href="../javascript04.html">데이터 제어하기</a></li>
+				</ul>
+				<ul>
+					<li><a href="../javascript05.html">문자열 객체</a></li>
+					<li><a href="../javascript06.html">배열 객체</a></li>
+					<li><a href="../javascript07.html">수학 객체</a></li>
+					<li><a href="../javascript08.html">숫자 객체</a></li>
+					<li><a href="../javascript09.html">브라우저 객체</a></li>
+					<li><a href="../javascript10.html">요소 객체</a></li>
+					<li><a href="../javascript11.html">이벤트 객체</a></li>
+				</ul>
+				<ul class="study">
+					<li><a href="../study/basic.html">기본 규칙</a></li>
+					<li><a href="../study/operator.html">연산자</a></li>
+					<li><a href="../study/for.html">반복문</a></li>
+					<li><a href="../study/if.html">조건문</a></li>
+					<li><a href="../study/type.html">데이터 타입</a></li>
+					<li><a href="../study/function.html">함수</a></li>
+					<li><a href="../study/var.html">지역변수/전역변수</a></li>
+					<li><a href="../study/element.html">요소 선택</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- //header -->
+		<main id="main">
+			<div class="document">
+				<h2 class="t_tit">나누어 떨어지는 숫자 배열</h2>
+
+				<hr />
+
+				<h3 class="t_tit2">문제 설명</h3>
+				array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한
+				배열을 반환하는 함수, solution을 작성해주세요. divisor로 나누어 떨어지는
+				element가 하나도 없다면 배열에 -1을 담아 반환하세요.
+				<p class="t_desc2"></p>
+				<h3 class="t_tit2">제한 조건</h3>
+
+				<p class="t_desc2">
+					🐼arr은 자연수를 담은 배열입니다.<br />
+					🐼정수 i, j에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다.<br />
+					🐼divisor는 자연수입니다.<br />
+					🐼array는 길이 1 이상인 배열입니다.
+				</p>
+
+				<h3 class="t_tit2">입출력 예시</h3>
+				<table class="t_table">
+					<thead>
+						<tr>
+							<th>arr</th>
+							<th>divisor</th>
+							<th>return</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ce">[5, 9, 7, 10]</td>
+							<td class="ce">5</td>
+							<td class="ce">[5, 10]</td>
+						</tr>
+						<tr>
+							<td class="ce">[2, 36, 1, 3]</td>
+							<td class="ce">1</td>
+							<td class="ce">[1, 2, 3, 36]</td>
+						</tr>
+						<tr>
+							<td class="ce">[3,2,6]</td>
+							<td class="ce">10</td>
+							<td class="ce">[-1]</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<hr />
+
+				<h3 class="t_tit2">🐼내가 한 풀이</h3>
+				<p class="t_desc">sort를 사용해서 오름차순으로 정렬해줬습니다!</p>
+				<div class="t_code">
+					<pre><code>const arr = [5, 9, 7, 10];
+const divisor = 5;
+function solution(arr, divisor) {
+    var answer = [];
+    for(let i = 0; i &lt; arr.length; i++){
+        if(arr[i] % divisor == 0){
+            answer.push(arr[i])
+        }
+    }
+    return answer.length == 0 ? [-1] : answer.sort((a,b) => a-b);
+}
+</code></pre>
+				</div>
+				<h3 class="t_tit2">🐼다른 풀이</h3>
+				<p class="t_desc">
+					filter를 사용해서 바로 찾아낼 수 있다는걸 깨달았다...!
+				</p>
+				<div class="t_code">
+					<pre><code>function solution(arr, divisor) {
+    var answer = arr.filter(v => v%divisor == 0);
+    return answer.length == 0 ? [-1] : answer.sort((a,b) => a-b);
+}
+</code></pre>
+				</div>
+			</div>
+		</main>
+		<!-- //main -->
+		<footer id="footer">
+			<a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+		</footer>
+		<!-- //footer -->
+		<script src="../assets/js/highlight.min.js"></script>
+		<script>
+			hljs.highlightAll();
+		</script>
+	</body>
+</html>

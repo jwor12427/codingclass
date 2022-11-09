@@ -1,0 +1,225 @@
+/** @format */
+
+.tetris__wrap {
+	width: 620px;
+	height: 600px;
+	background-color: #8f867f;
+	position: absolute;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 5px solid #404644;
+	border-radius: 10px 10px 50px 10px;
+}
+.tetris__inner {
+	width: 580px;
+	/* height: 700px; */
+	position: absolute;
+	padding: 20px 0px 0px 0px;
+	position: relative;
+}
+.tetris__view {
+	display: flex;
+	box-sizing: border-box;
+}
+.tetris__start {
+}
+.tetris__restart {
+}
+.tetris__line1 {
+	display: inline-block;
+	width: 110px;
+	height: 8px;
+	background-color: #404644;
+	margin-left: 57px;
+	margin-top: 20px;
+}
+.tetris__line2 {
+	display: inline-block;
+	width: 25px;
+	height: 8px;
+	background-color: #404644;
+	margin-left: 15px;
+	margin-top: 20px;
+}
+.tetris__line3 {
+	display: inline-block;
+	width: 175px;
+	height: 8px;
+	background-color: #404644;
+	margin-left: 15px;
+	margin-top: 20px;
+}
+.tetris__line4 {
+	width: 40px;
+	height: 15px;
+	border-radius: 15px;
+	background-color: #404644;
+	display: block;
+	margin-left: 7px;
+	margin-top: 15px;
+}
+.tetris__line5 {
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	background-color: #404644;
+	display: block;
+	margin-left: 18px;
+	margin-top: 50px;
+}
+.tetris__aside {
+	width: 10%;
+}
+.tetris__bg {
+	width: 90%;
+	display: flex;
+	/* justify-content: center; */
+	background-image: url(../img/tetris_bg.jpg);
+	background-size: cover;
+	box-sizing: border-box;
+	border-radius: 0px 5px 5px 0px;
+	position: relative;
+}
+.tetris__play {
+	width: 75%;
+	box-sizing: border-box;
+}
+.tetris__score {
+	width: 25%;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 0px 5px 5px 0px;
+}
+.playground {
+}
+
+.playground > ul {
+	border: 3px solid #404644;
+}
+.playground > ul > li {
+	list-style: none;
+	width: 100%;
+	height: 25px;
+}
+.playground > ul > li > ul {
+	display: flex;
+}
+.playground > ul > li > ul > li {
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	border: 1px solid rgba(250, 250, 250, 0.2);
+	display: block;
+	box-sizing: border-box;
+}
+.tetris__title {
+	margin-top: 20px;
+	color: #fafafa;
+	text-align: center;
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+.tetris__user,
+.tetris__speed {
+	width: 80%;
+	background-color: rgba(0, 0, 10, 0.5);
+	color: #f2f2f2;
+	border-radius: 5px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 18px;
+	padding: 7px 10px;
+}
+.tetris__start {
+	width: 150px;
+	border: 1px solid #f2f2f2;
+	background-color: #f2f2f2;
+	color: #404644;
+	padding: 10px 30px;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 26px;
+	position: absolute;
+	left: 55%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 100;
+}
+.tetris__start:hover {
+	background-color: #404644;
+	color: #f2f2f2;
+	border: 1px solid #404644;
+}
+.tetris__start.hide {
+	display: none;
+}
+.tetris__over {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #f2f2f2;
+	display: none;
+}
+.tetris__over.show {
+	display: flex;
+}
+.tetris__over .over {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+.tetris__over .t_score {
+	font-size: 28px;
+	margin-bottom: 30px;
+}
+.t_replay_btn {
+	width: 150px;
+	border: 1px solid #f2f2f2;
+	background-color: #f2f2f2;
+	color: #404644;
+	padding: 10px 30px;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 26px;
+}
+.t_replay_btn:hover {
+	background-color: #404644;
+	color: #f2f2f2;
+	border: 1px solid #404644;
+}
+/* 테트리스 블록 */
+.Tmino {
+	border: 4px #a042a2 inset !important;
+	background-color: #952d98;
+}
+.Lmino {
+	border: 4px #ff861a outset !important;
+	background-color: #ff7900;
+}
+.Jmino {
+	border: 4px #1a74c4 outset !important;
+	background-color: #0065bd;
+}
+.Zmino {
+	border: 4px #ef3e4d outset !important;
+	background-color: #ed2939;
+}
+.Smino {
+	border: 4px #78c53e outset !important;
+	background-color: #69be28;
+}
+.Omino {
+	border: 4px #fed01a outset !important;
+	background-color: #fecb00;
+}
+.Imino {
+	border: 4px #1aa9de outset !important;
+	background-color: #009fda;
+}

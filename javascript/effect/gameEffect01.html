@@ -38,6 +38,10 @@
 			rel="stylesheet"
 			href="../assets/css/memory.css"
 		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/tetrisGame.css"
+		/>
 	</head>
 	<body>
 		<header id="header">
@@ -1376,6 +1380,46 @@
 				</div>
 			</div>
 			<!-- //메모리 게임 -->
+
+			<div class="tetris__wrap">
+				<span class="tetris__line1"></span>
+				<span class="tetris__line2"></span>
+				<span class="tetris__line2"></span>
+				<span class="tetris__line2"></span>
+				<span class="tetris__line3"></span>
+				<div class="tetris__inner">
+					<div class="tetris__start">START</div>
+					<div class="tetris__view">
+						<div class="tetris__aside">
+							<span class="tetris__line5"></span>
+							<span class="tetris__line4"></span>
+						</div>
+						<div class="tetris__bg">
+							<div class="tetris__play">
+								<div class="playground">
+									<ul></ul>
+								</div>
+							</div>
+							<div class="tetris__score">
+								<div class="tetris__title">SCORE</div>
+								<div class="tetris__user">0</div>
+								<div class="tetris__title">SPEED</div>
+								<div class="tetris__speed">1</div>
+								<div class="tetris__title">NEXT</div>
+								<div class="tetris__Next">
+									<ul></ul>
+								</div>
+							</div>
+							<div class="tetris__over">
+								<div class="over">GAME OVER</div>
+								<div class="t_score">Your score 0</div>
+								<div class="t_replay_btn">RePlay?</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //테트리스 게임 -->
 		</div>
 
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -1384,6 +1428,7 @@
 		<script src="../assets/js/music.js"></script>
 		<script src="../assets/js/searchGame.js"></script>
 		<script src="../assets/js/memory.js"></script>
+		<script src="../assets/js/tetris.js"></script>
 		<script>
 			$(".icon1").draggable({
 				drag: function () {
@@ -1427,11 +1472,38 @@
 					$(".mouse__cursor img").attr("src", "../assets/img/game_mouse06.svg");
 				},
 			});
-			$(".music__inner").draggable();
 			$(".modal__btn").draggable();
-			$("#search__game").draggable();
-			$(".memory__inner").draggable();
 			$(".window__cont").draggable();
+			// $(".music__inner").draggable({ stack: ".wrap", zIndex: "50" });
+			// $("#search__game").draggable({ stack: ".wrap", zIndex: "50" });
+			// $(".memory__inner").draggable();
+			$(".music__inner").draggable({
+				drag: function () {
+					$(this).css("z-index", "1000");
+				},
+				stop: function () {
+					$("#search__game").css("z-index", "500");
+					$(".memory__inner").css("z-index", "500");
+				},
+			});
+			$("#search__game").draggable({
+				drag: function () {
+					$(this).css("z-index", "1000");
+				},
+				stop: function () {
+					$(".music__inner").css("z-index", "500");
+					$(".memory__inner").css("z-index", "500");
+				},
+			});
+			$(".memory__inner").draggable({
+				drag: function () {
+					$(this).css("z-index", "1000");
+				},
+				stop: function () {
+					$(".music__inner").css("z-index", "500");
+					$("#search__game").css("z-index", "500");
+				},
+			});
 			//현재시간 표시
 			function printTime() {
 				const clock = document.querySelector(".time");
