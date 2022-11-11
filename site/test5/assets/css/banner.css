@@ -1,0 +1,80 @@
+/** @format */
+
+.tab {
+	display: flex;
+	justify-content: space-between;
+}
+.tab > * {
+	width: 400px;
+	height: 200px;
+}
+.tab_ul > li {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 600;
+}
+.tab_ul > li > a {
+	display: block;
+	padding: 10px;
+}
+.tab_ul > li.on {
+	background-color: rgb(255, 245, 245);
+}
+.tab__item > * {
+	height: 156px;
+	padding: 10px;
+}
+.tab__item > *.on {
+	background-color: rgb(255, 245, 245);
+}
+.tab__item .notice.on {
+	display: block;
+}
+.tab__item .notice {
+	display: none;
+}
+.tab__item li {
+	display: flex;
+	line-height: 2.2;
+}
+.tab__item li:hover {
+	text-decoration: underline;
+}
+.tab__item li a {
+	display: inline-block;
+	width: 260px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.tab__item li em {
+	font-style: normal;
+	margin-left: auto;
+}
+.gallery {
+	display: none;
+	justify-content: space-between;
+}
+.gallery.on {
+	display: flex;
+}
+.gallery li {
+	width: 32%;
+	margin-top: 10px;
+}
+
+.banner__img,
+.go__link {
+	position: relative;
+}
+.banner__img h2,
+.go__link h2 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 18px;
+	font-weight: 600;
+	background: #fff;
+	padding: 10px;
+}

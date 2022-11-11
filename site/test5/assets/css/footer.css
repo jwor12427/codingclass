@@ -1,0 +1,18 @@
+/** @format */
+
+.footer__wrap {
+	background: #eee;
+	margin-top: 20px;
+}
+.footer__inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 120px;
+}
+.footer__inner a img {
+	margin-left: 10px;
+}
+.footer__inner p {
+	font-size: 18px;
+}

@@ -6,7 +6,12 @@ const playground = tetrisWrap.querySelector(".playground > ul");
 const tetrisStart = tetrisWrap.querySelector(".tetris__start");
 const tetrisReplay = tetrisWrap.querySelector(".t_replay_btn");
 const tetrisOver = tetrisWrap.querySelector(".tetris__over");
-const playnext = tetrisWrap.querySelector(".tetris__Next > ul");
+const tetrisNext = tetrisWrap.querySelector(".tetris__next > ul");
+let tetrisScore = tetrisWrap.querySelector(".tetris__user");
+let tetrisSpeed = tetrisWrap.querySelector(".tetris__speed");
+let overScore = tetrisWrap.querySelector(".t_score");
+let tetrisBgm = new Audio("../assets/audio/tetris_bg.mp3");
+let tetrisOverBgm = new Audio("../assets/audio/tetris_over.mp3");
 
 //변수 설정
 let rows = 20;
@@ -18,6 +23,8 @@ let tempMovungItem;
 let stopTetris = false;
 let tetrisTime = 0;
 let setTetrisTime;
+let setTetrisSpeed = 1;
+let tempNextItem;
 
 //블록 정보
 const movingItem = {
@@ -25,6 +32,12 @@ const movingItem = {
 	direction: 0, //블록 모양
 	top: 0,
 	left: 6,
+};
+const nextItem = {
+	type: "",
+	direction: 0, //블록 모양
+	top: 0,
+	left: 2,
 };
 
 //블록의 좌표값 설정
@@ -219,9 +232,28 @@ function init() {
 	for (let i = 0; i < rows; i++) {
 		prependNewLine(); //블록 라인 만들기
 	}
+	// stopTetris = false;
 
 	// renderBlocks(); //블록 출력 하기
 	// generateNewBlock(); //블록 만들기
+	//서브라인
+	for (let k = 0; k < 5; k++) {
+		prependNextLine();
+	}
+	// tempNextItem = { ...nextItem };
+	// console.log(tempNextItem);
+}
+//다음 블록 보여주기 - 라인 만들기
+function prependNextLine() {
+	const nextLi = document.createElement("li");
+	const nextUl = document.createElement("ul");
+
+	for (let u = 0; u < 5; u++) {
+		const nextMatrix = document.createElement("li");
+		nextUl.prepend(nextMatrix);
+	}
+	nextLi.prepend(nextUl);
+	tetrisNext.prepend(nextLi);
 }
 
 //블록 만들기
@@ -321,6 +353,8 @@ function checkMatch() {
 		if (li.classList.contains("seized")) {
 			stopTetris = true;
 			tetrisGameover();
+			tetrisOverBgm.play();
+			tetrisBgm.pause();
 		}
 	});
 
@@ -334,7 +368,25 @@ function checkMatch() {
 		if (match) {
 			child.remove();
 			prependNewLine();
-			// scoreT++
+			scoreT++;
+			tetrisScore.innerText = scoreT;
+			switch (scoreT) {
+				case 5:
+					duration = 300;
+					setTetrisSpeed++;
+					tetrisSpeed.innerText = setTetrisSpeed;
+					break;
+				case 10:
+					duration = 200;
+					setTetrisSpeed++;
+					tetrisSpeed.innerText = setTetrisSpeed;
+					break;
+				case 17:
+					duration = 100;
+					setTetrisSpeed++;
+					tetrisSpeed.innerText = setTetrisSpeed;
+					break;
+			}
 		}
 	});
 	//이상이 없으면 새블록 만들어 주기
@@ -355,6 +407,9 @@ function generateNewBlock() {
 	const blockArray = Object.entries(blocks);
 	const randomIndex = Math.floor(Math.random() * blockArray.length);
 	movingItem.type = blockArray[randomIndex][0];
+	nextItem.type = blockArray[randomIndex][1];
+	tempNextItem = { ...nextItem };
+	console.log(tempNextItem);
 
 	//초기화
 	movingItem.top = 0;
@@ -395,30 +450,32 @@ function dropBlock() {
 	}, 10);
 }
 
-//게임 오버
-function tetrisGameover() {
-	tetrisOver.classList.add("show");
-}
-//게임 재시작하기
-function tetrisRe() {
-	tetrisOver.classList.remove("show");
-	generateNewBlock();
-}
 //게임 시작하기
 function tetrisStartGo() {
 	tetrisStart.classList.add("hide");
 	generateNewBlock();
+	tetrisBgm.play();
 }
-
-//시작버튼 누르면 게임시작
-tetrisStart.addEventListener("click", () => {
-	tetrisStartGo();
-});
-
-//재시작 버튼 클릭
-document.querySelector(".t_replay_btn").addEventListener("click", () => {
-	tetrisRe();
-});
+//게임 오버
+function tetrisGameover() {
+	tetrisOver.classList.add("show");
+	overScore.innerHTML = `당신의 점수는 ${scoreT * 5}`;
+}
+//게임 재시작하기
+function tetrisRe() {
+	const restartMino = playground.querySelectorAll("li > ul > li");
+	restartMino.forEach((li) => {
+		li.className = "";
+	});
+	stopTetris = false;
+	generateNewBlock();
+	tetrisBgm.play();
+	scoreT = 0;
+	tetrisScore.innerText = 0;
+	duration = 500;
+	setTetrisSpeed = 1;
+	tetrisSpeed.innerText = 1;
+}
 
 //이벤트
 document.addEventListener("keydown", (e) => {
@@ -441,6 +498,18 @@ document.addEventListener("keydown", (e) => {
 		default:
 			break;
 	}
+});
+
+//시작버튼 누르면 게임시작
+tetrisStart.addEventListener("click", () => {
+	tetrisStartGo();
+});
+
+//재시작 버튼 클릭
+document.querySelector(".t_replay_btn").addEventListener("click", () => {
+	tetrisRe();
+	tetrisOver.classList.remove("show");
+	tetrisOverBgm.pause();
 });
 
 init();
