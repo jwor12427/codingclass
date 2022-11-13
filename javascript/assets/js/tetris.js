@@ -6,7 +6,8 @@ const playground = tetrisWrap.querySelector(".playground > ul");
 const tetrisStart = tetrisWrap.querySelector(".tetris__start");
 const tetrisReplay = tetrisWrap.querySelector(".t_replay_btn");
 const tetrisOver = tetrisWrap.querySelector(".tetris__over");
-const tetrisNext = tetrisWrap.querySelector(".tetris__next > ul");
+const tetrisTimeTo = tetrisWrap.querySelector(".tetris__time");
+const tetrisClose = tetrisWrap.querySelector(".tertis__close");
 let tetrisScore = tetrisWrap.querySelector(".tetris__user");
 let tetrisSpeed = tetrisWrap.querySelector(".tetris__speed");
 let overScore = tetrisWrap.querySelector(".t_score");
@@ -21,10 +22,9 @@ let duration = 500;
 let downInterval;
 let tempMovungItem;
 let stopTetris = false;
-let tetrisTime = 0;
-let setTetrisTime;
+let tetrisTime = 240;
+let setTetrisTime = "";
 let setTetrisSpeed = 1;
-let tempNextItem;
 
 //블록 정보
 const movingItem = {
@@ -32,12 +32,6 @@ const movingItem = {
 	direction: 0, //블록 모양
 	top: 0,
 	left: 6,
-};
-const nextItem = {
-	type: "",
-	direction: 0, //블록 모양
-	top: 0,
-	left: 2,
 };
 
 //블록의 좌표값 설정
@@ -233,27 +227,8 @@ function init() {
 		prependNewLine(); //블록 라인 만들기
 	}
 	// stopTetris = false;
-
 	// renderBlocks(); //블록 출력 하기
 	// generateNewBlock(); //블록 만들기
-	//서브라인
-	for (let k = 0; k < 5; k++) {
-		prependNextLine();
-	}
-	// tempNextItem = { ...nextItem };
-	// console.log(tempNextItem);
-}
-//다음 블록 보여주기 - 라인 만들기
-function prependNextLine() {
-	const nextLi = document.createElement("li");
-	const nextUl = document.createElement("ul");
-
-	for (let u = 0; u < 5; u++) {
-		const nextMatrix = document.createElement("li");
-		nextUl.prepend(nextMatrix);
-	}
-	nextLi.prepend(nextUl);
-	tetrisNext.prepend(nextLi);
 }
 
 //블록 만들기
@@ -354,7 +329,6 @@ function checkMatch() {
 			stopTetris = true;
 			tetrisGameover();
 			tetrisOverBgm.play();
-			tetrisBgm.pause();
 		}
 	});
 
@@ -372,17 +346,17 @@ function checkMatch() {
 			tetrisScore.innerText = scoreT;
 			switch (scoreT) {
 				case 5:
-					duration = 300;
+					duration = 250;
 					setTetrisSpeed++;
 					tetrisSpeed.innerText = setTetrisSpeed;
 					break;
 				case 10:
-					duration = 200;
+					duration = 150;
 					setTetrisSpeed++;
 					tetrisSpeed.innerText = setTetrisSpeed;
 					break;
-				case 17:
-					duration = 100;
+				case 15:
+					duration = 50;
 					setTetrisSpeed++;
 					tetrisSpeed.innerText = setTetrisSpeed;
 					break;
@@ -407,9 +381,6 @@ function generateNewBlock() {
 	const blockArray = Object.entries(blocks);
 	const randomIndex = Math.floor(Math.random() * blockArray.length);
 	movingItem.type = blockArray[randomIndex][0];
-	nextItem.type = blockArray[randomIndex][1];
-	tempNextItem = { ...nextItem };
-	console.log(tempNextItem);
 
 	//초기화
 	movingItem.top = 0;
@@ -450,16 +421,43 @@ function dropBlock() {
 	}, 10);
 }
 
+//시간 설정
+function timeTetris() {
+	tetrisTime--;
+
+	if (tetrisTime == 0) tetrisGameover();
+
+	tetrisTimeTo.innerHTML = displayTetris();
+}
+
+//시간 표시
+function displayTetris() {
+	if (tetrisTime <= 0) {
+		return "0:00";
+	} else {
+		let miutes = Math.floor(tetrisTime / 60);
+		let second = tetrisTime % 60;
+
+		if (second < 10) second = "0" + second;
+		return miutes + ":" + second;
+	}
+}
+
 //게임 시작하기
 function tetrisStartGo() {
 	tetrisStart.classList.add("hide");
 	generateNewBlock();
 	tetrisBgm.play();
+	tetrisBgm.loop = true;
+	setTetrisTime = setInterval(timeTetris, 1000);
 }
 //게임 오버
 function tetrisGameover() {
 	tetrisOver.classList.add("show");
 	overScore.innerHTML = `당신의 점수는 ${scoreT * 5}`;
+	tetrisBgm.pause();
+	tetrisBgm.currentTime = 0;
+	tetrisTime = 0;
 }
 //게임 재시작하기
 function tetrisRe() {
@@ -475,6 +473,8 @@ function tetrisRe() {
 	duration = 500;
 	setTetrisSpeed = 1;
 	tetrisSpeed.innerText = 1;
+	tetrisOverBgm.currentTime = 0;
+	tetrisTime = 240;
 }
 
 //이벤트
@@ -510,6 +510,12 @@ document.querySelector(".t_replay_btn").addEventListener("click", () => {
 	tetrisRe();
 	tetrisOver.classList.remove("show");
 	tetrisOverBgm.pause();
+});
+
+//게임창 끄기
+tetrisClose.addEventListener("click", () => {
+	tetrisWrap.classList.remove("open");
+	tetrisGameover();
 });
 
 init();

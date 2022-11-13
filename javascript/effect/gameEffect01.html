@@ -81,9 +81,9 @@
 				<div class="icon4">
 					<img
 						src="../assets/img/game_icon04.png"
-						alt="뮤직듣기"
+						alt="테트리스 게임"
 					/>
-					<span>뮤직듣기</span>
+					<span>테트리스 게임</span>
 				</div>
 				<div class="icon5">
 					<img
@@ -1409,8 +1409,12 @@
 									<div class="tetris__title">SPEED</div>
 									<div class="tetris__speed">1</div>
 									<div class="tetris__title">TIME</div>
-									<div class="tetris__next">
-										<ul></ul>
+									<div class="tetris__time">0:00</div>
+									<div class="tetris__title">규칙</div>
+									<div class="tetris__list">
+										<p>5점마다 스피드 +1</p>
+										<p>시간은 4분</p>
+										<p>점수는 score*5</p>
 									</div>
 								</div>
 								<div class="tetris__over">
@@ -1488,6 +1492,7 @@
 				stop: function () {
 					$("#search__game").css("z-index", "500");
 					$(".memory__inner").css("z-index", "500");
+					$(".tetris__wrap").css("z-index", "500");
 				},
 			});
 			$("#search__game").draggable({
@@ -1497,6 +1502,7 @@
 				stop: function () {
 					$(".music__inner").css("z-index", "500");
 					$(".memory__inner").css("z-index", "500");
+					$(".tetris__wrap").css("z-index", "500");
 				},
 			});
 			$(".memory__inner").draggable({
@@ -1505,6 +1511,17 @@
 				},
 				stop: function () {
 					$(".music__inner").css("z-index", "500");
+					$(".tetris__wrap").css("z-index", "500");
+					$("#search__game").css("z-index", "500");
+				},
+			});
+			$(".tetris__wrap").draggable({
+				drag: function () {
+					$(this).css("z-index", "1000");
+				},
+				stop: function () {
+					$(".music__inner").css("z-index", "500");
+					$(".memory__inner").css("z-index", "500");
 					$("#search__game").css("z-index", "500");
 				},
 			});
@@ -1626,20 +1643,10 @@
 				memoryInner.style.pointerEvents = "none";
 			});
 
-			// //인덱스값 높이기
-			// const gameBox = document.querySelectorAll(".game_box > div");
-
-			// function zindex() {
-			// 	gameBox.forEach((e) => {
-			// 		e.style.zindex = "10";
-			// 	});
-			// }
-			// gameBox.forEach((e) => {
-			// 	e.addEventListener("click", () => {
-			// 		zindex();
-			// 		e.style.zindex = "1000";
-			// 	});
-			// });
+			//테트리스게임 열기
+			document.querySelector(".icon4").addEventListener("click", () => {
+				tetrisWrap.classList.add("open");
+			});
 		</script>
 	</body>
 </html>

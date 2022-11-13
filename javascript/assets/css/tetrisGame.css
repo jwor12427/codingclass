@@ -9,11 +9,24 @@
 	box-sizing: border-box;
 	border-width: 8px;
 	border-color: #534e52;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	left: 30%;
+	top: 10%;
+	/* transform: translate(-50%, -50%); */
+	position: fixed;
 	position: absolute;
 	padding: 30px 10px;
+	display: none;
+}
+.tetris__wrap.open {
+	display: block;
+}
+.tertis__close {
+	background-image: url(../img/tetris_close.svg);
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 3px;
+	top: 5px;
 }
 .tetris__box {
 	width: 620px;
@@ -34,10 +47,7 @@
 	display: flex;
 	box-sizing: border-box;
 }
-.tetris__start {
-}
-.tetris__restart {
-}
+
 .tetris__line1 {
 	display: inline-block;
 	width: 110px;
@@ -103,8 +113,6 @@
 	background-color: rgba(0, 0, 0, 0.4);
 	border-radius: 0px 5px 5px 0px;
 }
-.playground {
-}
 
 .playground > ul {
 	border: 3px solid #404644;
@@ -112,7 +120,7 @@
 .playground > ul > li {
 	list-style: none;
 	width: 100%;
-	height: 25px;
+	/* height: 25px; */
 }
 .playground > ul > li > ul {
 	display: flex;
@@ -126,23 +134,12 @@
 	box-sizing: border-box;
 }
 .tetris__next > ul {
-	/* border: 3px solid #404644; */
+	border: 3px solid #404644;
 }
 .tetris__next > ul > li {
 	list-style: none;
 	width: 100%;
 	height: 25px;
-}
-.tetris__next > ul > li > ul {
-	display: flex;
-}
-.tetris__next > ul > li > ul > li {
-	list-style: none;
-	width: 25px;
-	height: 25px;
-	/* border: 1px solid rgba(250, 250, 250, 0.2); */
-	display: block;
-	box-sizing: border-box;
 }
 .tetris__title {
 	margin-top: 20px;
@@ -152,7 +149,8 @@
 	margin-bottom: 20px;
 }
 .tetris__user,
-.tetris__speed {
+.tetris__speed,
+.tetris__time {
 	width: 80%;
 	background-color: rgba(0, 0, 10, 0.5);
 	color: #f2f2f2;
@@ -224,6 +222,12 @@
 	background-color: #404644;
 	color: #f2f2f2;
 	border: 1px solid #404644;
+}
+.tetris__list p {
+	font-size: 14px;
+	color: #f2f2f2;
+	line-height: 1.6;
+	padding: 4px;
 }
 /* 테트리스 블록 */
 .Tmino {
