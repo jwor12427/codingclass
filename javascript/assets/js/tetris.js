@@ -516,6 +516,7 @@ document.querySelector(".t_replay_btn").addEventListener("click", () => {
 tetrisClose.addEventListener("click", () => {
 	tetrisWrap.classList.remove("open");
 	tetrisGameover();
+	stopTetris = true;
 });
 
 init();
