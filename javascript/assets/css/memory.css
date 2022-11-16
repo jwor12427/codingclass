@@ -12,7 +12,7 @@
 	border: 3px solid #f56fad;
 	background: #000;
 	position: absolute;
-	left: 300px;
+	left: 30%;
 	top: 100px;
 	border-radius: 20px;
 	animation: flicker 1.5s infinite alternate;
