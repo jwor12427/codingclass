@@ -6,7 +6,8 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100vh;
-	background: url(../img/game_bg.png);
+	background: url(../img/game_bg03.jpg);
+	background-size: cover;
 }
 body::after {
 	content: "";

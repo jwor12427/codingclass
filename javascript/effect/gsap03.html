@@ -1,0 +1,103 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.horizontalWrap {
+				width: 100%;
+				height: 100vh;
+				overflow: hidden;
+			}
+			.horizontalSection {
+				overscroll-behavior: none;
+				width: 500%;
+				display: flex;
+				flex-wrap: nowrap;
+			}
+			.section {
+				width: 100%;
+				height: 100vh;
+			}
+			.section1 {
+				background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+			}
+			.section2 {
+				background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+			}
+			.section3 {
+				background-image: linear-gradient(
+					to top,
+					#0c3483 0%,
+					#a2b6df 100%,
+					#6b8cce 100%,
+					#a2b6df 100%
+				);
+			}
+			.section4 {
+				background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+			}
+			.section5 {
+				background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="horizontalWrap">
+			<div class="horizontalSection">
+				<section class="section section1"></section>
+				<section class="section section2"></section>
+				<section class="section section3"></section>
+				<section class="section section4"></section>
+				<section class="section section5"></section>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+		<script>
+			gsap.registerPlugin(ScrollTrigger);
+			const lenis = new Lenis({
+				duration: 1.2,
+				easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+			});
+
+			function raf(time) {
+				lenis.raf(time);
+				requestAnimationFrame(raf);
+			}
+
+			requestAnimationFrame(raf);
+
+			const sections = gsap.utils.toArray(".section");
+
+			gsap.to(sections, {
+				xPercent: -100 * (sections.length - 1),
+				ease: "none",
+				scrollTrigger: {
+					trigger: ".horizontalWrap",
+					pin: true,
+					scrub: 1,
+					end: "+=3600",
+					markers: true,
+					// snap: 1 / (sections.length - 1), //영역 가까이 왔을때 멈추는것
+				},
+			});
+		</script>
+	</body>
+</html>

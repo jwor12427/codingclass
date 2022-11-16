@@ -1,0 +1,287 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#contents > section {
+				min-height: 90vh;
+			}
+			#section1 {
+				background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+			}
+			#section2 {
+				background-image: linear-gradient(
+					to top,
+					#fdcbf1 0%,
+					#fdcbf1 1%,
+					#e6dee9 100%
+				);
+			}
+			#section3 {
+				background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+			}
+			#section4 {
+				background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+			}
+			#section5 {
+				background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+			}
+			#section6 {
+				background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+			}
+			.squear {
+				width: 200px;
+				height: 200px;
+				background-image: linear-gradient(
+					to right,
+					#f78ca0 0%,
+					#f9748f 19%,
+					#fd868c 60%,
+					#fe9a8b 100%
+				);
+				/* border-radius: 50%; */
+			}
+			.squear2 {
+				width: 200px;
+				height: 200px;
+				background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+				border-radius: 50%;
+			}
+			.squear.white {
+				background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+			}
+			.panel {
+				height: 100vh;
+				background-color: #fce2db;
+			}
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: #00c6fb;
+			}
+			.box-red {
+				background-color: #f78ca0;
+			}
+			nav {
+				position: sticky;
+				top: 0;
+				transition: all 600ms ease-in-out;
+				background-color: #a1c4fd;
+				color: #282a3a;
+				text-align: center;
+			}
+			li {
+				display: inline-block;
+				padding: 20px;
+			}
+			.not-active {
+				background: #fff;
+				color: #6a85b6;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li>about</li>
+				<li>work</li>
+				<li>contact</li>
+			</ul>
+		</nav>
+		<!-- <main id="contents">
+			<section id="section1"></section>
+			<section id="section2">
+				<div class="squear"></div>
+			</section>
+			<section id="section3"></section>
+			<section id="section4"></section>
+			<section id="section5"></section>
+			<section id="section6"></section>
+		</main> -->
+		<div class="panel">
+			Welcome to my portfolio! Introducing my new challenge. Please enjoy my
+			portfolio full of passion, and cheer for the new challenge!
+		</div>
+		<!-- <div class="box"></div>
+		<div class="panel"></div> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+		<script>
+			gsap.registerPlugin(ScrollTrigger);
+			ScrollTrigger.create({
+				trigger: ".panel",
+				start: "top 6%",
+				markers: true,
+				toggleClass: { targets: "nav", className: "not-active" }, //타겟써서 클래스 바꿔주는 법
+				onEnter: () => console.log(onEnter),
+				onLeave: () => console.log(onLeave),
+				onEnterBack: () => console.log(onEnterBack),
+				onLeaveBack: () => console.log(onLeaveBack),
+			});
+			//기본 애니메이션
+			// gsap.to(".squear", {
+			// 	x: 1000,
+			// 	duration: 3,
+			// 	scrollTrigger: {
+			// 		trigger: ".squear",
+			// 		start: "top 60%",
+			// 		end: "top 30%",
+			// 		markers: {
+			// 			startColor: "#256D85",
+			// 			endColor: "#FF577F",
+			// 			fontSize: "30px",
+			// 		},
+			// 		toggleClass: "white",
+			// 		toggleActions: "restart none none none",
+			// 		pin: true,
+			// 		pinSpacing: false,
+			// 	},
+			// });
+			// gsap.to(".squear", {
+			// 	x: 1000,
+			// 	duration: 2,
+			// 	rotation: 100,
+			// 	skewY: 1,
+			// 	borderRadius: 0,
+			// });
+			// gsap.to(".squear", {
+			// 	y: 500,
+			// 	duration: 2,
+			// 	rotation: 0,
+			// 	skewY: 3,
+			// 	borderRadius: 100,
+			// 	delay: 2,
+			// });
+			// gsap.to(".squear", {
+			// 	x: 0,
+			// 	duration: 2,
+			// 	rotation: 300,
+			// 	skewY: 1,
+			// 	width: 300,
+			// 	delay: 4,
+			// });
+			// gsap.to(".squear", {
+			// 	y: 0,
+			// 	duration: 2,
+			// 	rotation: 0,
+			// 	width: 200,
+			// 	delay: 6,
+			// });
+		</script>
+		<!-- <script>
+			//백업백업
+			gsap.registerPlugin(ScrollTrigger);
+			gsap.to(".squear", {
+				x: 1000,
+				duration: 3,
+				scrollTrigger: {
+					trigger: ".squear",
+					start: "top 60%",
+					end: () => `+=${document.querySelector(".squear").offsetHeight}`,
+					markers: true,
+					toggleClass: "white",
+				},
+			});
+			//toggleActions
+			toggleActions: "restart pause resume reset", //onEnter onLeave onEnterBack onLeaveBack
+					//play, pause, resume, reset, restart, complete, reverse, none (사용가능)
+				},
+			});
+			// scrub: 4, //스크롤할때마다 움직이는 효과 true 또는 숫자 사용가능
+			//고정 시키기	
+			pin: true,	(true또는 자기자신 사용)
+			pinSpacing: false,  	//false는 다음꺼 무시
+
+			//타임라인 거는것
+			// //변수로 만들어서 timeline사용 가능
+			// const tl = gsap.timeline({
+			// 	scrollTrigger: {
+			// 		trigger: ".squear",
+			// 		markers: true,
+			// 		start: "top 80%",
+			// 		end: "top 30%",
+			// 		scrub: 1,
+			// 	},
+			// });
+			// //스크롤 왔을때 애니메이션 시작
+			// tl.to(".squear", {
+			// 	x: 1000,
+			// 	duration: 2,
+			// 	rotation: 100,
+			// 	skewY: 1,
+			// 	borderRadius: 0,
+			// })
+			// 	.to(".squear", {
+			// 		y: 500,
+			// 		duration: 2,
+			// 		rotation: 0,
+			// 		skewY: 3,
+			// 		borderRadius: 100,
+			// 	})
+			// 	.to(".squear", {
+			// 		x: 0,
+			// 		duration: 2,
+			// 		rotation: 300,
+			// 		skewY: 1,
+			// 		width: 300,
+			// 	})
+			// 	.to(".squear", {
+			// 		y: 0,
+			// 		duration: 2,
+			// 		rotation: 0,
+			// 		width: 200,
+			// 	});
+			//타임라인2
+			// const tl = gsap.timeline({ repeat: 2, yoyo: true });	//부가기능은 gsap홈페이지 참조, yoyo는 왔다가 되돌아감
+			// tl.to(".squear", {
+			// 	x: 1000,
+			// 	duration: 2,
+			// 	rotation: 100,
+			// 	skewY: 1,
+			// 	borderRadius: 0,
+			// 	ease: "elastic",	//애니메이션 효과
+			// })
+			// 	.to(".squear", {
+			// 		y: 500,
+			// 		duration: 2,
+			// 		rotation: 0,
+			// 		skewY: 3,
+			// 		borderRadius: 100,
+			// 		delay: 2,
+			// 		ease: "elastic",
+			// 	})
+			// 	.to(".squear", {
+			// 		x: 0,
+			// 		duration: 2,
+			// 		rotation: 300,
+			// 		skewY: 1,
+			// 		width: 300,
+			// 		delay: 4,
+			// 		ease: "elastic",
+			// 	})
+			// 	.to(".squear", {
+			// 		y: 0,
+			// 		duration: 2,
+			// 		rotation: 0,
+			// 		width: 200,
+			// 		delay: 6,
+			// 		ease: "elastic",
+			// 	});
+		</script> -->
+	</body>
+</html>

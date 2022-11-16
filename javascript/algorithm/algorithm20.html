@@ -1,0 +1,137 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>자바스크립트 : 기본 규칙</title>
+		<link
+			rel="stylesheet"
+			href="../assets/css/style.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/dracula.css"
+		/>
+	</head>
+	<body>
+		<header id="header">
+			<h1><a href="../index.html">Javascript</a></h1>
+			<nav class="header_nav">
+				<ul>
+					<li><a href="../javascript01.html">데이터 저장하기</a></li>
+					<li><a href="../javascript02.html">데이터 불러오기</a></li>
+					<li><a href="../javascript03.html">데이터 실행하기</a></li>
+					<li><a href="../javascript04.html">데이터 제어하기</a></li>
+				</ul>
+				<ul>
+					<li><a href="../javascript05.html">문자열 객체</a></li>
+					<li><a href="../javascript06.html">배열 객체</a></li>
+					<li><a href="../javascript07.html">수학 객체</a></li>
+					<li><a href="../javascript08.html">숫자 객체</a></li>
+					<li><a href="../javascript09.html">브라우저 객체</a></li>
+					<li><a href="../javascript10.html">요소 객체</a></li>
+					<li><a href="../javascript11.html">이벤트 객체</a></li>
+				</ul>
+				<ul class="study">
+					<li><a href="../study/basic.html">기본 규칙</a></li>
+					<li><a href="../study/operator.html">연산자</a></li>
+					<li><a href="../study/for.html">반복문</a></li>
+					<li><a href="../study/if.html">조건문</a></li>
+					<li><a href="../study/type.html">데이터 타입</a></li>
+					<li><a href="../study/function.html">함수</a></li>
+					<li><a href="../study/var.html">지역변수/전역변수</a></li>
+					<li><a href="../study/element.html">요소 선택</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- //header -->
+		<main id="main">
+			<div class="document">
+				<h2 class="t_tit">자연수 뒤집어 배열로 만들기</h2>
+
+				<hr />
+
+				<h3 class="t_tit2">문제 설명</h3>
+				<p class="t_desc2">
+					자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로
+					리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.
+				</p>
+				<h3 class="t_tit2">제한 조건</h3>
+
+				<p class="t_desc2">🤭n은 10,000,000,000이하인 자연수입니다.<br /></p>
+
+				<h3 class="t_tit2">입출력 예시</h3>
+				<table class="t_table">
+					<thead>
+						<tr>
+							<th>n</th>
+							<th>return</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ce">12345</td>
+							<td class="ce">[5,4,3,2,1]</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<hr />
+
+				<h3 class="t_tit2">🤭내가 한 풀이</h3>
+				<p class="t_desc">
+					parseInt() 메서드를 사용해서 문자열로 만든 배열을 숫자로 변환하였다...
+				</p>
+				<div class="t_code">
+					<pre><code>let n = 12345;
+function solution(n) {
+    var answer = [];
+    let s = n.toString();
+    answer = s.split("").reverse().map(el => parseInt(el));
+    
+    return answer;
+}
+</code></pre>
+				</div>
+				<h3 class="t_tit2">🤭다른 풀이</h3>
+				<p class="t_desc">
+					문자로 아닌 숫자로 푸신분도 있었다... 콘솔로 하나씩 돌려보니 처음의
+					arr.push(n%10)는 5가 반환되고, n = Math.floor(n/10)는 나머지 1234가
+					반환된다... 그래서 가능한것 같다... 신기하다🤔
+				</p>
+				<div class="t_code">
+					<pre><code>function solution(n) {
+  // 숫자풀이
+  var arr = [];
+
+  do {
+      arr.push(n%10);
+      n = Math.floor(n/10);
+  } while (n>0);
+
+  return arr;
+}
+</code></pre>
+				</div>
+			</div>
+		</main>
+		<!-- //main -->
+		<footer id="footer">
+			<a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+		</footer>
+		<!-- //footer -->
+		<script src="../assets/js/highlight.min.js"></script>
+		<script>
+			hljs.highlightAll();
+		</script>
+	</body>
+</html>
