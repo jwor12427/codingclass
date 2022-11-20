@@ -1,0 +1,72 @@
+/** @format */
+.footer__inner {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 50px 6px 10px 6px;
+  width: 88%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__inner .footer__left .footerItem {
+  margin-bottom: 10px;
+}
+.footer__inner .footer__left .footerItem ul {
+  display: flex;
+}
+.footer__inner .footer__left .footerItem ul li a {
+  display: inline-block;
+  margin-right: 20px;
+  color: #979797;
+}
+.footer__inner .footer__left .footerItem ul li a em {
+  color: #fff;
+}
+.footer__inner .footer__left .list1 li {
+  margin-right: 5%;
+}
+.footer__inner .footer__left .list1 li:nth-child(2) {
+  margin-right: 1%;
+}
+.footer__inner .footer__left .list2 li:nth-child(2) {
+  margin-right: 15%;
+}
+.footer__inner .footer__left .text1 a,
+.footer__inner .footer__left .text2 a {
+  color: #979797;
+}
+.footer__inner .footer__right {
+  width: 18%;
+}
+.footer__inner .footer__right .right__text {
+  text-align: right;
+  margin-left: 2px;
+  margin-top: -5px;
+  margin-bottom: 16px;
+  font-family: var(--font-Eng);
+}
+.footer__inner .footer__right .right__text span {
+  display: inline-block;
+  margin: 0 -2px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+.footer__inner .footer__right .right__text span.space {
+  margin-right: 8px;
+}
+.footer__inner .footer__right .right__text span.target {
+  color: #02ee9f;
+}
+.footer__inner .footer__right .right__icon {
+  float: right;
+}
+.footer__inner .footer__right .right__icon .github {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 14px;
+  background: url("../img/github_icon.svg") no-repeat center/cover;
+}
+.footer__inner .footer__right .right__icon .github:last-child {
+  margin-right: 0;
+}

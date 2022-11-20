@@ -1,0 +1,86 @@
+/** @format */
+
+.footer__inner {
+	font-size: 16px;
+	font-weight: 400;
+	padding: 50px 6px 10px 6px;
+	width: 88%;
+	display: flex;
+	justify-content: space-between;
+	.footer__left {
+		.footerItem {
+			margin-bottom: 10px;
+			ul {
+				display: flex;
+				li {
+					a {
+						display: inline-block;
+						margin-right: 20px;
+						color: #979797;
+						em {
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+		// 간격 설정
+		.list1 {
+			li {
+				margin-right: 5%;
+				&:nth-child(2) {
+					margin-right: 1%;
+				}
+			}
+		}
+		.list2 {
+			li {
+				&:nth-child(2) {
+					margin-right: 15%;
+				}
+			}
+		}
+		.text1,
+		.text2 {
+			a {
+				color: #979797;
+			}
+		}
+	}
+	.footer__right {
+		width: 18%;
+		.right__text {
+			text-align: right;
+			margin-left: 2px;
+			margin-top: -5px;
+			margin-bottom: 16px;
+			font-family: var(--font-Eng);
+			span {
+				display: inline-block;
+				margin: 0 -2px;
+				font-size: 24px;
+				font-weight: bold;
+				color: #fff;
+				&.space {
+					margin-right: 8px;
+				}
+				&.target {
+					color: #02ee9f;
+				}
+			}
+		}
+		.right__icon {
+			float: right;
+			.github {
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+				margin-right: 14px;
+				background: url("../img/github_icon.svg") no-repeat center/cover;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
