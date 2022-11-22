@@ -1,3 +1,5 @@
+/** @format */
+
 @charset "UTF-8";
 
 /* basic */
@@ -12,8 +14,8 @@
 @import url("header.css");
 @import url("slider.css");
 @import url("text.css");
+@import url("text02.css");
 @import url("image.css");
 @import url("card.css");
 @import url("banner.css");
 @import url("footer.css");
-
