@@ -454,7 +454,7 @@ function tetrisStartGo() {
 //게임 오버
 function tetrisGameover() {
 	tetrisOver.classList.add("show");
-	overScore.innerHTML = `당신의 점수는 ${scoreT * 5}`;
+	overScore.innerHTML = `당신의 점수는 ${scoreT * 5} 입니다 O_O`;
 	tetrisBgm.pause();
 	tetrisBgm.currentTime = 0;
 	tetrisTime = 0;
@@ -517,6 +517,7 @@ tetrisClose.addEventListener("click", () => {
 	tetrisWrap.classList.remove("open");
 	tetrisGameover();
 	stopTetris = true;
+	tetrisStart.classList.add("hide");
 });
 
 init();
