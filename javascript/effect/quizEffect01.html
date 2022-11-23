@@ -1,97 +1,115 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>퀴즈 이펙트</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트</title>
+		<link
+			rel="stylesheet"
+			href="../assets/css/quiz.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/atom-one-light.min.css"
+		/>
 
-    <link rel="stylesheet" href="../assets/css/quiz.css">
-    <link rel="stylesheet" href="../assets/css/atom-one-light.min.css">
+		<link
+			href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://webfontworld.github.io/wando/WandoCleanSea.css"
+			rel="stylesheet"
+		/>
+	</head>
 
-    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
-    <link href="https://webfontworld.github.io/wando/WandoCleanSea.css" rel="stylesheet">
-
-</head>
-
-<body>
-    <header id="header">
-        <h1><a href="quizEffect.html">Quiz</a><em>정답확인하기 유형</em></h1>
-        <nav>
-            <ul>
-                <li class="active"><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
-                <li><a href="quizEffect03.html">3</a></li>
-                <li><a href="quizEffect04.html">4</a></li>
-                <li><a href="quizEffect05.html">5</a></li>
-                <li><a href="quizEffect06.html">6</a></li>
-                <li><a href="quizEffect07.html">7</a></li>
-                <li><a href="quizEffect08.html">8</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- //header -->
-    <main id="main">
-        <div class="quiz__wrap">
-            <div class="quiz">
-                <span class="quiz__type"></span>
-                <h2 class="quiz__question">
-                    <span class="number"></span>
-                    <div class="ask"></div>
-                </h2>
-                <div class="quiz__view">
-                    <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
-                            </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
-                            </div>
-                            <div class="chin"></div>
-                        </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz__answer">
-                    <button class="confirm">정답 확인하기</button>
-                    <div class="result"></div>
-                </div>
-            </div>
-        </div>
- 
-    </main>
-    <!-- //main -->
-    <footer id="footer">
-        <div class="window__wrap">
-            <div class="window__btn">소스 보기</div>
-            <div class="window__cont">
-                <div class="window__box">
-                    <div class="title_bar">
-                        <div class="minimize">
-                            <div class="symbol"></div>
-                        </div>
-                        <div class="maximize">
-                            <div class="symbol"></div>
-                        </div>
-                        <div class="close">
-                            <div class="symbol"></div>
-                        </div>
-                    </div>
-                    <div class="menu__bar"><span class="active">Javascript</span><span>HTML</span><span>CSS</span></div>
-                    <div class="window__container">
-                        <div class="content">
-                            <div class="main">
-                                <div class="cont">
-                                    <div class="active">
-<pre><code>//선택자
+	<body>
+		<header id="header">
+			<h1><a href="quizEffect.html">Quiz</a><em>정답확인하기 유형</em></h1>
+			<nav>
+				<ul>
+					<li class="active"><a href="quizEffect01.html">1</a></li>
+					<li><a href="quizEffect02.html">2</a></li>
+					<li><a href="quizEffect03.html">3</a></li>
+					<li><a href="quizEffect04.html">4</a></li>
+					<li><a href="quizEffect05.html">5</a></li>
+					<li><a href="quizEffect06.html">6</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- //header -->
+		<main id="main">
+			<div class="quiz__wrap">
+				<div class="quiz">
+					<span class="quiz__type"></span>
+					<h2 class="quiz__question">
+						<span class="number"></span>
+						<div class="ask"></div>
+					</h2>
+					<div class="quiz__view">
+						<div class="dog">
+							<div class="head">
+								<div class="ears"></div>
+								<div class="face"></div>
+								<div class="eyes">
+									<div class="teardrop"></div>
+								</div>
+								<div class="nose"></div>
+								<div class="mouth">
+									<div class="tongue"></div>
+								</div>
+								<div class="chin"></div>
+							</div>
+							<div class="body">
+								<div class="tail"></div>
+								<div class="legs"></div>
+							</div>
+						</div>
+					</div>
+					<div class="quiz__answer">
+						<button class="confirm">정답 확인하기</button>
+						<div class="result"></div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- //main -->
+		<footer id="footer">
+			<div class="window__wrap">
+				<div class="window__btn">소스 보기</div>
+				<div class="window__cont">
+					<div class="window__box">
+						<div class="title_bar">
+							<div class="minimize">
+								<div class="symbol"></div>
+							</div>
+							<div class="maximize">
+								<div class="symbol"></div>
+							</div>
+							<div class="close">
+								<div class="symbol"></div>
+							</div>
+						</div>
+						<div class="menu__bar">
+							<span class="active">Javascript</span><span>HTML</span
+							><span>CSS</span>
+						</div>
+						<div class="window__container">
+							<div class="content">
+								<div class="main">
+									<div class="cont">
+										<div class="active">
+											<pre><code>//선택자
 const quizType =  document.querySelector(".quiz__type");                //퀴즈 종류
 const quizNumber = document.querySelector(".quiz__question .number");   //퀴즈 번호
 const quizAsk = document.querySelector(".quiz__question .ask");         //퀴즈 질문
@@ -122,9 +140,9 @@ quizConfirm.addEventListener("click", function(){
     quizResult.style.display = "block";
 });                                            //버튼을 클릭하면 실행! (함수로 실행)  
 </code></pre>
-                                    </div>
-                                    <div>
-<pre><code>&lt;div class="quiz__wrap"&gt;
+										</div>
+										<div>
+											<pre><code>&lt;div class="quiz__wrap"&gt;
     &lt;div class="quiz"&gt;
         &lt;span class="quiz__type"&gt;&lt;/span&gt;
         &lt;h2 class="quiz__question"&gt;
@@ -158,9 +176,9 @@ quizConfirm.addEventListener("click", function(){
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-                                    </div>
-                                    <div>
-<pre><code>/* quiz__wrap */
+										</div>
+										<div>
+											<pre><code>/* quiz__wrap */
 .quiz__wrap {
     display: flex;
     align-items: flex-start;
@@ -347,62 +365,62 @@ quizConfirm.addEventListener("click", function(){
     }
 }    
 </code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="scroll">
-                                <div class="start"></div>
-                                <div class="progress"></div>
-                                <div class="end"></div>
-                            </div>
-                        </div>
-                        <div class="scroll__row">
-                            <div class="start"></div>
-                            <div class="progress"></div>
-                            <div class="end"></div>
-                        </div>
-                    </div>
-                    <div class="window__footer"></div>
-                </div>
-            </div>
-        </div>
-        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>>
-    </footer>
-    <!-- //footer -->
-    <script src="../assets/js/highlight.min.js"></script>
-    <script src="../assets/js/quizEffect.js"></script>
-    <script>
-        //선택자
-        const quizType =  document.querySelector(".quiz__type");                //퀴즈 종류
-        const quizNumber = document.querySelector(".quiz__question .number");   //퀴즈 번호
-        const quizAsk = document.querySelector(".quiz__question .ask");         //퀴즈 질문
-        const quizConfirm = document.querySelector(".quiz__answer .confirm");   //정답 확인 버튼
-        const quizResult = document.querySelector(".quiz__answer .result");     //정답 결과
-        const quizDog = document.querySelector(".quiz__view .dog");             //강아지
-       
-        //문제 정보
-        const answerType = "웹디자인기능사";
-        const answerNum = 1;
-        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
-        const answerResult = "연변대비";
+										</div>
+									</div>
+								</div>
+								<div class="scroll">
+									<div class="start"></div>
+									<div class="progress"></div>
+									<div class="end"></div>
+								</div>
+							</div>
+							<div class="scroll__row">
+								<div class="start"></div>
+								<div class="progress"></div>
+								<div class="end"></div>
+							</div>
+						</div>
+						<div class="window__footer"></div>
+					</div>
+				</div>
+			</div>
+			<a href="mailto:jwor124@naver.com">jwor124@naver.com</a>>
+		</footer>
+		<!-- //footer -->
+		<script src="../assets/js/highlight.min.js"></script>
+		<script src="../assets/js/quizEffect.js"></script>
+		<script>
+			//선택자
+			const quizType = document.querySelector(".quiz__type"); //퀴즈 종류
+			const quizNumber = document.querySelector(".quiz__question .number"); //퀴즈 번호
+			const quizAsk = document.querySelector(".quiz__question .ask"); //퀴즈 질문
+			const quizConfirm = document.querySelector(".quiz__answer .confirm"); //정답 확인 버튼
+			const quizResult = document.querySelector(".quiz__answer .result"); //정답 결과
+			const quizDog = document.querySelector(".quiz__view .dog"); //강아지
 
-        //문제 출력
-        quizType.innerText = answerType;
-        quizNumber.innerText = answerNum + ". ";
-        quizAsk.innerText = answerAsk;
-        quizResult.innerText = answerResult;
+			//문제 정보
+			const answerType = "웹디자인기능사";
+			const answerNum = 1;
+			const answerAsk =
+				"인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
+			const answerResult = "연변대비";
 
-        //정답 숨기기
-        quizResult.style.display = "none";
+			//문제 출력
+			quizType.innerText = answerType;
+			quizNumber.innerText = answerNum + ". ";
+			quizAsk.innerText = answerAsk;
+			quizResult.innerText = answerResult;
 
-        //정답 확인
-        //정답 버튼을 클릭하면 확인버튼 안보이게 하기, 숨겨진 정답은 보이게 하기
-        //정답을 확인하면 강아지가 웃고 있음 // class like를 추가함
-        quizConfirm.addEventListener("click", function(){
-            quizConfirm.style.display = "none";         //css처럼 style을 넣어줄 수 있음
-            quizResult.style.display = "block";
-        });                                            //버튼을 클릭하면 실행! (함수로 실행)
-    </script>
-</body>
+			//정답 숨기기
+			quizResult.style.display = "none";
 
+			//정답 확인
+			//정답 버튼을 클릭하면 확인버튼 안보이게 하기, 숨겨진 정답은 보이게 하기
+			//정답을 확인하면 강아지가 웃고 있음 // class like를 추가함
+			quizConfirm.addEventListener("click", function () {
+				quizConfirm.style.display = "none"; //css처럼 style을 넣어줄 수 있음
+				quizResult.style.display = "block";
+			}); //버튼을 클릭하면 실행! (함수로 실행)
+		</script>
+	</body>
 </html>

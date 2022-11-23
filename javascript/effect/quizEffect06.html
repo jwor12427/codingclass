@@ -1,69 +1,89 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>퀴즈 이펙트</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트</title>
+		<link
+			rel="stylesheet"
+			href="../assets/css/quiz.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/atom-one-light.min.css"
+		/>
 
-    <link rel="stylesheet" href="../assets/css/quiz.css">
-    <link rel="stylesheet" href="../assets/css/atom-one-light.min.css">
+		<link
+			href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://webfontworld.github.io/wando/WandoCleanSea.css"
+			rel="stylesheet"
+		/>
+	</head>
 
-    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
-    <link href="https://webfontworld.github.io/wando/WandoCleanSea.css" rel="stylesheet">
-</head>
-
-<body>
-    <header id="header">
-        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(여러문제) 확인하기 : 슬라이드 형식</em></h1>
-        <nav>
-            <ul>
-                <li><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
-                <li><a href="quizEffect03.html">3</a></li>
-                <li><a href="quizEffect04.html">4</a></li>
-                <li><a href="quizEffect05.html">5</a></li>
-                <li class="active"><a href="quizEffect06.html">6</a></li>
-                <li><a href="quizEffect07.html">7</a></li>
-                <li><a href="quizEffect08.html">8</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- //header -->
-    <main id="main">
-        <div class="quiz__wrap">
-            <div class="quiz">
-                <span class="quiz__type"></span>
-                <h2 class="quiz__question">
-                    <!-- <span class="number"></span>
+	<body>
+		<header id="header">
+			<h1>
+				<a href="../javascript01.html">Quiz</a>
+				<em>객관식(여러문제) 확인하기 : 슬라이드 형식</em>
+			</h1>
+			<nav>
+				<ul>
+					<li><a href="quizEffect01.html">1</a></li>
+					<li><a href="quizEffect02.html">2</a></li>
+					<li><a href="quizEffect03.html">3</a></li>
+					<li><a href="quizEffect04.html">4</a></li>
+					<li><a href="quizEffect05.html">5</a></li>
+					<li class="active"><a href="quizEffect06.html">6</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- //header -->
+		<main id="main">
+			<div class="quiz__wrap">
+				<div class="quiz">
+					<span class="quiz__type"></span>
+					<h2 class="quiz__question">
+						<!-- <span class="number"></span>
                     <div class="ask"></div> -->
-                </h2>
-                <div class="quiz__view">
-                    <div class="true">정답입니다!</div>
-                    <div class="false">틀렸습니다!</div>
-                    <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
-                            </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
-                            </div>
-                            <div class="chin"></div>
-                        </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz__answer">
-                    <div class="quiz__selects">
-                        <!-- <label for="select1">
+					</h2>
+					<div class="quiz__view">
+						<div class="true">정답입니다!</div>
+						<div class="false">틀렸습니다!</div>
+						<div class="dog">
+							<div class="head">
+								<div class="ears"></div>
+								<div class="face"></div>
+								<div class="eyes">
+									<div class="teardrop"></div>
+								</div>
+								<div class="nose"></div>
+								<div class="mouth">
+									<div class="tongue"></div>
+								</div>
+								<div class="chin"></div>
+							</div>
+							<div class="body">
+								<div class="tail"></div>
+								<div class="legs"></div>
+							</div>
+						</div>
+					</div>
+					<div class="quiz__answer">
+						<div class="quiz__selects">
+							<!-- <label for="select1">
                             <input type="radio" id="select1" class="select" name="select" value="1">
                             <span class="choice"></span>
                         </label>
@@ -79,37 +99,40 @@
                             <input type="radio" id="select4" class="select" name="select" value="4">
                             <span class="choice"></span>
                         </label> -->
-                    </div>
-                    <div class="result"></div>
-                    <button class="confirm">다음 문제 보기 ➡️</button>
-                </div>
-            </div>
-        </div>
-    </main>
-    <!-- //main -->
-    <footer id="footer">
-        <div class="window__wrap">
-            <div class="window__btn">소스 보기</div>
-            <div class="window__cont">
-                <div class="window__box">
-                    <div class="title_bar">
-                        <div class="minimize">
-                            <div class="symbol"></div>
-                        </div>
-                        <div class="maximize">
-                            <div class="symbol"></div>
-                        </div>
-                        <div class="close">
-                            <div class="symbol"></div>
-                        </div>
-                    </div>
-                    <div class="menu__bar"><span class="active">Javascript</span><span>HTML</span><span>CSS</span></div>
-                    <div class="window__container">
-                        <div class="content">
-                            <div class="main">
-                                <div class="cont">
-                                    <div class="active">
-<pre><code>//문제정보
+						</div>
+						<div class="result"></div>
+						<button class="confirm">다음 문제 보기 ➡️</button>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- //main -->
+		<footer id="footer">
+			<div class="window__wrap">
+				<div class="window__btn">소스 보기</div>
+				<div class="window__cont">
+					<div class="window__box">
+						<div class="title_bar">
+							<div class="minimize">
+								<div class="symbol"></div>
+							</div>
+							<div class="maximize">
+								<div class="symbol"></div>
+							</div>
+							<div class="close">
+								<div class="symbol"></div>
+							</div>
+						</div>
+						<div class="menu__bar">
+							<span class="active">Javascript</span><span>HTML</span
+							><span>CSS</span>
+						</div>
+						<div class="window__container">
+							<div class="content">
+								<div class="main">
+									<div class="cont">
+										<div class="active">
+											<pre><code>//문제정보
 const quizInfo = [
     {
         answerType: "웹디자인기능사 2010년 05회",
@@ -169,9 +192,9 @@ const answerQuiz = () => {
 }
 quizConfirm.addEventListener("click", answerQuiz);
 </code></pre>
-                                    </div>
-                                    <div>
-<pre><code>//문제 출력
+										</div>
+										<div>
+											<pre><code>//문제 출력
 const updateQuiz = (index) =&gt; {
     const questionTag = `
         &lt;span class="number"&gt;${quizInfo[index].answerNum}. &lt;/span&gt;
@@ -214,9 +237,9 @@ const updateQuiz = (index) =&gt; {
 }
 updateQuiz(quizCount);
 </code></pre>
-                                    </div>
-                                    <div>
-<pre><code>/* quiz__wrap */
+										</div>
+										<div>
+											<pre><code>/* quiz__wrap */
 .quiz__wrap {
     display: flex;
     align-items: flex-start;
@@ -443,117 +466,104 @@ updateQuiz(quizCount);
     }
 }
 </code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="scroll">
-                                <div class="start"></div>
-                                <div class="progress"></div>
-                                <div class="end"></div>
-                            </div>
-                        </div>
-                        <div class="scroll__row">
-                            <div class="start"></div>
-                            <div class="progress"></div>
-                            <div class="end"></div>
-                        </div>
-                    </div>
-                    <div class="window__footer"></div>
-                </div>
-            </div>
-        </div>
-        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
-    </footer>
-    <!-- //footer -->
-    <script src="../assets/js/highlight.min.js"></script>
-    <script src="../assets/js/quizEffect.js"></script>
-    <script>
-        //문제정보
+										</div>
+									</div>
+								</div>
+								<div class="scroll">
+									<div class="start"></div>
+									<div class="progress"></div>
+									<div class="end"></div>
+								</div>
+							</div>
+							<div class="scroll__row">
+								<div class="start"></div>
+								<div class="progress"></div>
+								<div class="end"></div>
+							</div>
+						</div>
+						<div class="window__footer"></div>
+					</div>
+				</div>
+			</div>
+			<a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+		</footer>
+		<!-- //footer -->
+		<script src="../assets/js/highlight.min.js"></script>
+		<script src="../assets/js/quizEffect.js"></script>
+		<script>
+			//문제정보
 
-        const quizInfo = [
-            {
-                answerType: "웹디자인기능사 2010년 05회",
-                answerNum: "1",
-                answerAsk: "먼셀의 색상에서 이 표준 빨강이면 1R은?",
-                answerChoice: [
-                    "연지",
-                    "다홍",
-                    "주황",
-                    "보라",
-                ],
-                answerResult: "연지",
-                answerEx: "먼셀의 색상에 이 표준이 빨강이면 여기서 R은 빨강을 뜻하므로 1명도의 빨강인 연지가 답입니다."
-            },
-            {
-                answerType: "웹디자인기능사 2010년 05회",
-                answerNum: "2",
-                answerAsk: "빛의 파장에 따른 굴절 각도를 이용하여 프리즘에 의한 가시스펙트럼 색을 얻을 수 있었는데, 이것은 빛이 단색이 아니라 여러 가지 색의 혼합색이라는 것을 말한다고 정의한 사람은?",
-                answerChoice: [
-                    "헤리",
-                    "헬름홀츠",
-                    "돈서스",
-                    "뉴턴",
-                ],
-                answerResult: "뉴턴",
-                answerEx: "프리즘을 이용해 빛을 스펙트럼으로 분리해서 최초로 발견한 사람은 뉴턴입니다. 가시광선은 눈에 보이는 영역을 의미하며 이것은 여러가지 혼합색으로 이루어져 있습니다."
-            },
-            {
-                answerType: "웹디자인기능사 2010년 05회",
-                answerNum: "3",
-                answerAsk: "가산 혼색에서 혼색의 결과로 옳은 것은?",
-                answerChoice: [
-                    " 파랑(BLUE) + 녹색(GREEN) = 마젠타(MAGENTA)",
-                    "파랑(BLUE) + 빨강(RED) = 시안(CYAN)",
-                    "녹색(GREEN) + 빨강(RED) = 노랑(YELLOW)",
-                    "파랑(BLUE) + 녹색(GREEN) = 검정(BLACK)",
-                ],
-                answerResult: "녹색(GREEN) + 빨강(RED) = 노랑(YELLOW)",
-                answerEx: "가산혼합은 다른 말로는 빛의 혼합이며, RGB를 뜻하기도 합니다. 녹색과 빨강을 혼합할 경우 노랑이 나오게 됩니다."
-            },
-            {
-                answerType: "웹디자인기능사 2010년 05회",
-                answerNum: "4",
-                answerAsk: "균형의 가장 정형적인 구성 형식이며 균형이 잘 잡힌 상태로 통일감을 얻기 쉬우나, 딱딱한 느낌을 주는 원리는?",
-                answerChoice: [
-                    "대칭",
-                    "비대칭",
-                    "비례",
-                    "변화",
-                ],
-                answerResult: "대칭",
-                answerEx: "대칭은 균형적으로 닮음을 뜻하며 통일감을 얻기 쉬운반면 딱딱한 느낌을 동시에 주는 원리 입니다."
-            },
-            {
-                answerType: "웹디자인기능사 2010년 05회",
-                answerNum: "5",
-                answerAsk: "색을 보고 맛과 냄새 음과 촉감 등을 느낄 수 있어 톡 쏘는듯 한 냄새가 연상되는 색은?",
-                answerChoice: [
-                    "녹색",
-                    "자색",
-                    "오렌지색",
-                    "라일락색",
-                ],
-                answerResult: "오렌지색",
-                answerEx: "톡쏘는 듯한 냄새를 연상하게 해주는 색은 오렌지색 입니다."
-            }
-        ];
-        
-        const quizQuestion = document.querySelector(".quiz__question");     //문제 번호, 질문
-        const quizSelects = document.querySelector(".quiz__selects");       //객관식 보기
-        const quizType = document.querySelector(".quiz__type");             //퀴즈 타입
-        const quizResult = document.querySelector(".quiz__answer .result");  //해설
-        const quizConfirm = document.querySelector(".quiz__answer .confirm"); //정답 확인버튼
-        const quizView = document.querySelector(".quiz__view")              //강아지
-        let quizCount = 0;
-        let quizScore = 0; 
+			const quizInfo = [
+				{
+					answerType: "웹디자인기능사 2010년 05회",
+					answerNum: "1",
+					answerAsk: "먼셀의 색상에서 이 표준 빨강이면 1R은?",
+					answerChoice: ["연지", "다홍", "주황", "보라"],
+					answerResult: "연지",
+					answerEx:
+						"먼셀의 색상에 이 표준이 빨강이면 여기서 R은 빨강을 뜻하므로 1명도의 빨강인 연지가 답입니다.",
+				},
+				{
+					answerType: "웹디자인기능사 2010년 05회",
+					answerNum: "2",
+					answerAsk:
+						"빛의 파장에 따른 굴절 각도를 이용하여 프리즘에 의한 가시스펙트럼 색을 얻을 수 있었는데, 이것은 빛이 단색이 아니라 여러 가지 색의 혼합색이라는 것을 말한다고 정의한 사람은?",
+					answerChoice: ["헤리", "헬름홀츠", "돈서스", "뉴턴"],
+					answerResult: "뉴턴",
+					answerEx:
+						"프리즘을 이용해 빛을 스펙트럼으로 분리해서 최초로 발견한 사람은 뉴턴입니다. 가시광선은 눈에 보이는 영역을 의미하며 이것은 여러가지 혼합색으로 이루어져 있습니다.",
+				},
+				{
+					answerType: "웹디자인기능사 2010년 05회",
+					answerNum: "3",
+					answerAsk: "가산 혼색에서 혼색의 결과로 옳은 것은?",
+					answerChoice: [
+						" 파랑(BLUE) + 녹색(GREEN) = 마젠타(MAGENTA)",
+						"파랑(BLUE) + 빨강(RED) = 시안(CYAN)",
+						"녹색(GREEN) + 빨강(RED) = 노랑(YELLOW)",
+						"파랑(BLUE) + 녹색(GREEN) = 검정(BLACK)",
+					],
+					answerResult: "녹색(GREEN) + 빨강(RED) = 노랑(YELLOW)",
+					answerEx:
+						"가산혼합은 다른 말로는 빛의 혼합이며, RGB를 뜻하기도 합니다. 녹색과 빨강을 혼합할 경우 노랑이 나오게 됩니다.",
+				},
+				{
+					answerType: "웹디자인기능사 2010년 05회",
+					answerNum: "4",
+					answerAsk:
+						"균형의 가장 정형적인 구성 형식이며 균형이 잘 잡힌 상태로 통일감을 얻기 쉬우나, 딱딱한 느낌을 주는 원리는?",
+					answerChoice: ["대칭", "비대칭", "비례", "변화"],
+					answerResult: "대칭",
+					answerEx:
+						"대칭은 균형적으로 닮음을 뜻하며 통일감을 얻기 쉬운반면 딱딱한 느낌을 동시에 주는 원리 입니다.",
+				},
+				{
+					answerType: "웹디자인기능사 2010년 05회",
+					answerNum: "5",
+					answerAsk:
+						"색을 보고 맛과 냄새 음과 촉감 등을 느낄 수 있어 톡 쏘는듯 한 냄새가 연상되는 색은?",
+					answerChoice: ["녹색", "자색", "오렌지색", "라일락색"],
+					answerResult: "오렌지색",
+					answerEx: "톡쏘는 듯한 냄새를 연상하게 해주는 색은 오렌지색 입니다.",
+				},
+			];
 
-        //문제 출력
-        const updateQuiz = (index) => {
-            const questionTag = `
+			const quizQuestion = document.querySelector(".quiz__question"); //문제 번호, 질문
+			const quizSelects = document.querySelector(".quiz__selects"); //객관식 보기
+			const quizType = document.querySelector(".quiz__type"); //퀴즈 타입
+			const quizResult = document.querySelector(".quiz__answer .result"); //해설
+			const quizConfirm = document.querySelector(".quiz__answer .confirm"); //정답 확인버튼
+			const quizView = document.querySelector(".quiz__view"); //강아지
+			let quizCount = 0;
+			let quizScore = 0;
+
+			//문제 출력
+			const updateQuiz = (index) => {
+				const questionTag = `
                 <span class="number">${quizInfo[index].answerNum}. </span>
                 <div class="ask">${quizInfo[index].answerAsk}</div> 
             `;
-            const choiceTag = `
+				const choiceTag = `
                 <label for="select1">
                     <input type="radio" id="select1" class="select" name="select" value="1">
                     <span class="choice">${quizInfo[index].answerChoice[0]}</span>
@@ -572,61 +582,60 @@ updateQuiz(quizCount);
                 </label>
             `;
 
-            //문제 출력
-            quizType.innerHTML = quizInfo[index].answerType;  //퀴즈 유형
-            quizQuestion.innerHTML = questionTag;             //번호, 질문
-            quizSelects.innerHTML = choiceTag;                //객관식 보기
-            quizResult.innerHTML = quizInfo[index].answerEx;  //해설
-           
+				//문제 출력
+				quizType.innerHTML = quizInfo[index].answerType; //퀴즈 유형
+				quizQuestion.innerHTML = questionTag; //번호, 질문
+				quizSelects.innerHTML = choiceTag; //객관식 보기
+				quizResult.innerHTML = quizInfo[index].answerEx; //해설
 
-            const quizChoice = quizSelects.querySelectorAll(".choice");
+				const quizChoice = quizSelects.querySelectorAll(".choice");
 
-            for(let i =0; i < quizChoice.length; i++) {
-                quizChoice[i].setAttribute("onclick", "choiceSelected(this)")
-            }
+				for (let i = 0; i < quizChoice.length; i++) {
+					quizChoice[i].setAttribute("onclick", "choiceSelected(this)");
+				}
 
-            //문제, 해설 숨기기
-            quizResult.style.display = "none";
-            quizConfirm.style.display = "none";
-        }
-        updateQuiz(quizCount);
+				//문제, 해설 숨기기
+				quizResult.style.display = "none";
+				quizConfirm.style.display = "none";
+			};
+			updateQuiz(quizCount);
 
-        const choiceSelected = (answer) => {
-            let userAnswer = answer.textContent;                    //사용자가 체크한 정답
-            let currentAnswer = quizInfo[quizCount].answerResult;   //문제 정답
+			const choiceSelected = (answer) => {
+				let userAnswer = answer.textContent; //사용자가 체크한 정답
+				let currentAnswer = quizInfo[quizCount].answerResult; //문제 정답
 
+				if (userAnswer == currentAnswer) {
+					quizView.classList.add("like");
+					quizScore++;
+				} else {
+					quizView.classList.add("dislike");
+					quizResult.style.display = "block";
+				}
+				quizConfirm.style.display = "block";
+			};
 
-            if(userAnswer == currentAnswer){
-                quizView.classList.add("like");
-                quizScore++;
-            } else {
-                quizView.classList.add("dislike");
-                quizResult.style.display = "block";
-            }
-            quizConfirm.style.display = "block";
-        }
+			//정답 확인 버튼
+			const answerQuiz = () => {
+				//마지막 문제
+				if (quizInfo.length - 1 == quizCount) {
+					quizConfirm.textContent =
+						"총" +
+						`${quizCount + 1}` +
+						"문제 중에" +
+						quizScore +
+						"문제를 맞추었습니다.";
+					if (quizScore >= 3) {
+						quizConfirm.textContent += "합격입니다🎊";
+					} else {
+						quizConfirm.textContent += "노력하세요🧸";
+					}
+				}
+				quizCount++;
+				updateQuiz(quizCount);
+				quizView.classList.remove("like", "dislike");
+			};
 
-        //정답 확인 버튼
-        const answerQuiz = () => {
-            
-
-            //마지막 문제
-            if(quizInfo.length -1 == quizCount){
-                quizConfirm.textContent = "총" + `${quizCount+1}` + "문제 중에" + quizScore + "문제를 맞추었습니다."
-                if(quizScore >= 3){
-                    quizConfirm.textContent += "합격입니다🎊";
-                } else {
-                    quizConfirm.textContent += "노력하세요🧸";
-                }
-            }
-            quizCount++;
-            updateQuiz(quizCount);
-            quizView.classList.remove("like", "dislike");
-        }
-
-        
-        quizConfirm.addEventListener("click", answerQuiz);
-    </script>
-</body>
-
+			quizConfirm.addEventListener("click", answerQuiz);
+		</script>
+	</body>
 </html>
