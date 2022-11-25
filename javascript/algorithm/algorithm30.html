@@ -1,0 +1,144 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>자바스크립트 : 기본 규칙</title>
+		<link
+			rel="stylesheet"
+			href="../assets/css/style.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/dracula.css"
+		/>
+	</head>
+	<body>
+		<header id="header">
+			<h1><a href="../index.html">Javascript</a></h1>
+			<nav class="header_nav">
+				<ul>
+					<li><a href="../javascript01.html">데이터 저장하기</a></li>
+					<li><a href="../javascript02.html">데이터 불러오기</a></li>
+					<li><a href="../javascript03.html">데이터 실행하기</a></li>
+					<li><a href="../javascript04.html">데이터 제어하기</a></li>
+				</ul>
+				<ul>
+					<li><a href="../javascript05.html">문자열 객체</a></li>
+					<li><a href="../javascript06.html">배열 객체</a></li>
+					<li><a href="../javascript07.html">수학 객체</a></li>
+					<li><a href="../javascript08.html">숫자 객체</a></li>
+					<li><a href="../javascript09.html">브라우저 객체</a></li>
+					<li><a href="../javascript10.html">요소 객체</a></li>
+					<li><a href="../javascript11.html">이벤트 객체</a></li>
+				</ul>
+				<ul class="study">
+					<li><a href="../study/basic.html">기본 규칙</a></li>
+					<li><a href="../study/operator.html">연산자</a></li>
+					<li><a href="../study/for.html">반복문</a></li>
+					<li><a href="../study/if.html">조건문</a></li>
+					<li><a href="../study/type.html">데이터 타입</a></li>
+					<li><a href="../study/function.html">함수</a></li>
+					<li><a href="../study/var.html">지역변수/전역변수</a></li>
+					<li><a href="../study/element.html">요소 선택</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- //header -->
+		<main id="main">
+			<div class="document">
+				<h2 class="t_tit">부족한 금액 계산하기</h2>
+
+				<hr />
+
+				<h3 class="t_tit2">문제 설명</h3>
+				<p class="t_desc2">
+					새로 생긴 놀이기구는 인기가 매우 많아 줄이 끊이질 않습니다. 이
+					놀이기구의 원래 이용료는 price원 인데, 놀이기구를 N 번 째 이용한다면
+					원래 이용료의 N배를 받기로 하였습니다.<br />
+					즉, 처음 이용료가 100이었다면 2번째에는 200, 3번째에는 300으로 요금이
+					인상됩니다.<br />
+					놀이기구를 count번 타게 되면 현재 자신이 가지고 있는 금액에서 얼마가
+					모자라는지를 return 하도록 solution 함수를 완성하세요.<br />
+					단, 금액이 부족하지 않으면 0을 return 하세요.
+				</p>
+				<h3 class="t_tit2">제한 조건</h3>
+
+				<p class="t_desc2">
+					😖놀이기구의 이용료 price : 1 ≤ price ≤ 2,500, price는 자연수<br />
+					😖처음 가지고 있던 금액 money : 1 ≤ money ≤ 1,000,000,000, money는
+					자연수<br />
+					😖놀이기구의 이용 횟수 count : 1 ≤ count ≤ 2,500, count는 자연수
+				</p>
+
+				<h3 class="t_tit2">입출력 예시</h3>
+				<table class="t_table">
+					<thead>
+						<tr>
+							<th>price</th>
+							<th>money</th>
+							<th>count</th>
+							<th>result</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ce">3</td>
+							<td class="ce">20</td>
+							<td class="ce">4</td>
+							<td class="ce">10</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<hr />
+
+				<h3 class="t_tit2">😖내가 한 풀이</h3>
+				<p class="t_desc">마지막은 삼항연사자로 해결~</p>
+				<div class="t_code">
+					<pre><code>const price = 3,
+    money = 20,
+    count = 4;
+function solution(price, money, count) {
+  var answer = 0;
+  for(let i = 1; i &lt;= count; i++){
+      answer += price * i;
+  }
+  return answer > money ? answer - money : 0;
+}
+</code></pre>
+				</div>
+				<h3 class="t_tit2">😖다른 풀이</h3>
+				<p class="t_desc">
+					가우스 공식을 활용하여 해결하신 분들도 있었습니다! 정말 멋진 풀이네요
+					보는순간 감탄했습니다!
+				</p>
+				<div class="t_code">
+					<pre><code>function solution(price, money, count) {
+    const tmp = price * count * (count + 1) / 2 - money;
+    return tmp > 0 ? tmp : 0;
+}
+</code></pre>
+				</div>
+			</div>
+		</main>
+		<!-- //main -->
+		<footer id="footer">
+			<a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+		</footer>
+		<!-- //footer -->
+		<script src="../assets/js/highlight.min.js"></script>
+		<script>
+			hljs.highlightAll();
+		</script>
+	</body>
+</html>
