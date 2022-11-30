@@ -1,0 +1,147 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>자바스크립트 : 기본 규칙</title>
+		<link
+			rel="stylesheet"
+			href="../assets/css/style.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/dracula.css"
+		/>
+	</head>
+	<body>
+		<header id="header">
+			<h1><a href="../index.html">Javascript</a></h1>
+			<nav class="header_nav">
+				<ul>
+					<li><a href="../javascript01.html">데이터 저장하기</a></li>
+					<li><a href="../javascript02.html">데이터 불러오기</a></li>
+					<li><a href="../javascript03.html">데이터 실행하기</a></li>
+					<li><a href="../javascript04.html">데이터 제어하기</a></li>
+				</ul>
+				<ul>
+					<li><a href="../javascript05.html">문자열 객체</a></li>
+					<li><a href="../javascript06.html">배열 객체</a></li>
+					<li><a href="../javascript07.html">수학 객체</a></li>
+					<li><a href="../javascript08.html">숫자 객체</a></li>
+					<li><a href="../javascript09.html">브라우저 객체</a></li>
+					<li><a href="../javascript10.html">요소 객체</a></li>
+					<li><a href="../javascript11.html">이벤트 객체</a></li>
+				</ul>
+				<ul class="study">
+					<li><a href="../study/basic.html">기본 규칙</a></li>
+					<li><a href="../study/operator.html">연산자</a></li>
+					<li><a href="../study/for.html">반복문</a></li>
+					<li><a href="../study/if.html">조건문</a></li>
+					<li><a href="../study/type.html">데이터 타입</a></li>
+					<li><a href="../study/function.html">함수</a></li>
+					<li><a href="../study/var.html">지역변수/전역변수</a></li>
+					<li><a href="../study/element.html">요소 선택</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- //header -->
+		<main id="main">
+			<div class="document">
+				<h2 class="t_tit">2016년</h2>
+
+				<hr />
+
+				<h3 class="t_tit2">문제 설명</h3>
+				<p class="t_desc2">
+					2016년 1월 1일은 금요일입니다. 2016년 a월 b일은 무슨 요일일까요? 두 수
+					a ,b를 입력받아 2016년 a월 b일이 무슨 요일인지 리턴하는 함수,
+					solution을 완성하세요. 요일의 이름은 일요일부터 토요일까지 각각
+					SUN,MON,TUE,WED,THU,FRI,SAT 입니다.<br />
+					예를 들어 a=5, b=24라면 5월 24일은 화요일이므로 문자열 "TUE"를
+					반환하세요.
+				</p>
+				<h3 class="t_tit2">제한 조건</h3>
+
+				<p class="t_desc2">
+					🦊2016년은 윤년입니다.<br />🦊2016년 a월 b일은 실제로 있는 날입니다.
+					(13월 26일이나 2월 45일같은 날짜는 주어지지 않습니다)
+				</p>
+
+				<h3 class="t_tit2">입출력 예시</h3>
+				<table class="t_table">
+					<thead>
+						<tr>
+							<th>a</th>
+							<th>b</th>
+							<th>result</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ce">5</td>
+							<td class="ce">24</td>
+							<td class="ce">"TUE"</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<hr />
+
+				<h3 class="t_tit2">🦊내가 한 풀이</h3>
+				<p class="t_desc">
+					요일에 관한 배열을 만든후, a와b를 toString()메서드를 사용하여 문자열로
+					만들어 줍니다.<br />
+					new Date()메서드를 사용하여 날짜와 년도의 데이터를 반환합니다.
+					마지막으로 getDay()를 사용하며 요일을 반환받을 수 있습니다!(생각외로
+					재미있는 문제였습니다.ㅎㅎ)
+				</p>
+				<div class="t_code">
+					<pre><code>let a = 5,
+  b = 24;
+let arr = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+function solution(a, b) {
+  var answer = '';
+  let c = a.toString();
+  let d = b.toString();
+  let dt = new Date("2016-" + c + "-" + d);
+  answer = arr[dt.getDay()];
+  return answer;
+}
+</code></pre>
+				</div>
+				<h3 class="t_tit2">🦊다른 풀이</h3>
+				<p class="t_desc">
+					배열을 따로 생성하지 않고 바로 toUpperCase()를 사용하여 바로 받는
+					방법도 있었군요!<br />
+					slice를 활용하여 요일의 앞의 문자만 받는군요... 한줄로 간편하게 사용할
+					수 있다니.. 오늘도 배우고 가네요!ㅎㅎ
+				</p>
+				<div class="t_code">
+					<pre><code>function getDayName(a,b){
+  var date = new Date(2016, (a - 1), b);
+    return date.toString().slice(0, 3).toUpperCase();
+}
+</code></pre>
+				</div>
+			</div>
+		</main>
+		<!-- //main -->
+		<footer id="footer">
+			<a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+		</footer>
+		<!-- //footer -->
+		<script src="../assets/js/highlight.min.js"></script>
+		<script>
+			hljs.highlightAll();
+		</script>
+	</body>
+</html>
