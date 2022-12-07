@@ -1,0 +1,146 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>자바스크립트 : 기본 규칙</title>
+		<link
+			rel="stylesheet"
+			href="../assets/css/style.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/dracula.css"
+		/>
+	</head>
+	<body>
+		<header id="header">
+			<h1><a href="../index.html">Javascript</a></h1>
+			<nav class="header_nav">
+				<ul>
+					<li><a href="../javascript01.html">데이터 저장하기</a></li>
+					<li><a href="../javascript02.html">데이터 불러오기</a></li>
+					<li><a href="../javascript03.html">데이터 실행하기</a></li>
+					<li><a href="../javascript04.html">데이터 제어하기</a></li>
+				</ul>
+				<ul>
+					<li><a href="../javascript05.html">문자열 객체</a></li>
+					<li><a href="../javascript06.html">배열 객체</a></li>
+					<li><a href="../javascript07.html">수학 객체</a></li>
+					<li><a href="../javascript08.html">숫자 객체</a></li>
+					<li><a href="../javascript09.html">브라우저 객체</a></li>
+					<li><a href="../javascript10.html">요소 객체</a></li>
+					<li><a href="../javascript11.html">이벤트 객체</a></li>
+				</ul>
+				<ul class="study">
+					<li><a href="../study/basic.html">기본 규칙</a></li>
+					<li><a href="../study/operator.html">연산자</a></li>
+					<li><a href="../study/for.html">반복문</a></li>
+					<li><a href="../study/if.html">조건문</a></li>
+					<li><a href="../study/type.html">데이터 타입</a></li>
+					<li><a href="../study/function.html">함수</a></li>
+					<li><a href="../study/var.html">지역변수/전역변수</a></li>
+					<li><a href="../study/element.html">요소 선택</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- //header -->
+		<main id="main">
+			<div class="document">
+				<h2 class="t_tit">JadenCase 문자열 만들기</h2>
+
+				<hr />
+
+				<h3 class="t_tit2">문제 설명</h3>
+				<p class="t_desc2">
+					JadenCase란 모든 단어의 첫 문자가 대문자이고, 그 외의 알파벳은
+					소문자인 문자열입니다. 단, 첫 문자가 알파벳이 아닐 때에는 이어지는
+					알파벳은 소문자로 쓰면 됩니다. (첫 번째 입출력 예 참고) <br />문자열
+					s가 주어졌을 때, s를 JadenCase로 바꾼 문자열을 리턴하는 함수,
+					solution을 완성해주세요.
+				</p>
+				<h3 class="t_tit2">제한 조건</h3>
+
+				<p class="t_desc2">
+					🦖s는 길이 1 이상 200 이하인 문자열입니다. <br />🦖s는 알파벳과 숫자,
+					공백문자(" ")로 이루어져 있습니다.<br />
+					🦖숫자는 단어의 첫 문자로만 나옵니다.<br />
+					🦖숫자로만 이루어진 단어는 없습니다.<br />
+					🦖공백문자가 연속해서 나올 수 있습니다.
+				</p>
+
+				<h3 class="t_tit2">입출력 예시</h3>
+				<table class="t_table">
+					<thead>
+						<tr>
+							<th>s</th>
+							<th>return</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ce">"3people unFollowed me"</td>
+							<td class="ce">"3people Unfollowed Me"</td>
+						</tr>
+						<tr>
+							<td class="ce">"for the last week"</td>
+							<td class="ce">"For The Last Week"</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<hr />
+
+				<h3 class="t_tit2">🦖내가 한 풀이</h3>
+				<p class="t_desc">
+					처음에는 소문자로 만들어 주고, 공백단위 단어를 나누어 주었습니다.<br />
+					map()을 활용하여서 새로운 배열을 만들어 주었습니다. 여기서 replace와
+					charAt(0), 정규식 표현으로 앞글자를 찾아주었습니다. join()은 공백을
+					포함해야 합니다.
+				</p>
+				<div class="t_code">
+					<pre><code>let s = "3people unFollowed me";
+function solution(s) {
+    var answer = '';
+    //소문자 만들기 & 공백으로 나눠주기
+    s = s.toLowerCase().split(' ');
+    //공백여부도 포함, charAt으로 앞글자 찾음
+    answer = s.map(e => e.replace(/^./,e.charAt(0).toUpperCase())).join(' ')
+    return answer;
+}
+</code></pre>
+				</div>
+				<h3 class="t_tit2">🦖다른 풀이</h3>
+				<p class="t_desc">
+					정규식 표현대신에 substring()과 charAt()을 함께 사용해 찾을 수도
+					있네요.replace()사용하지 않고, 바로 charAt(0)과 substring(1)으로
+					첫번째와 두번째를 따로 찾을수 있군요.
+				</p>
+				<div class="t_code">
+					<pre><code>function solution(s) {
+    return s.split(" ").map(v => v.charAt(0).toUpperCase() + v.substring(1).toLowerCase()).join(" ");
+}
+</code></pre>
+				</div>
+			</div>
+		</main>
+		<!-- //main -->
+		<footer id="footer">
+			<a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+		</footer>
+		<!-- //footer -->
+		<script src="../assets/js/highlight.min.js"></script>
+		<script>
+			hljs.highlightAll();
+		</script>
+	</body>
+</html>
