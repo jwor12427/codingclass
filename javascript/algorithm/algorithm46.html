@@ -1,0 +1,180 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>자바스크립트 : 기본 규칙</title>
+		<link
+			rel="stylesheet"
+			href="../assets/css/style.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="../assets/css/dracula.css"
+		/>
+	</head>
+	<body>
+		<header id="header">
+			<h1><a href="../index.html">Javascript</a></h1>
+			<nav class="header_nav">
+				<ul>
+					<li><a href="../javascript01.html">데이터 저장하기</a></li>
+					<li><a href="../javascript02.html">데이터 불러오기</a></li>
+					<li><a href="../javascript03.html">데이터 실행하기</a></li>
+					<li><a href="../javascript04.html">데이터 제어하기</a></li>
+				</ul>
+				<ul>
+					<li><a href="../javascript05.html">문자열 객체</a></li>
+					<li><a href="../javascript06.html">배열 객체</a></li>
+					<li><a href="../javascript07.html">수학 객체</a></li>
+					<li><a href="../javascript08.html">숫자 객체</a></li>
+					<li><a href="../javascript09.html">브라우저 객체</a></li>
+					<li><a href="../javascript10.html">요소 객체</a></li>
+					<li><a href="../javascript11.html">이벤트 객체</a></li>
+				</ul>
+				<ul class="study">
+					<li><a href="../study/basic.html">기본 규칙</a></li>
+					<li><a href="../study/operator.html">연산자</a></li>
+					<li><a href="../study/for.html">반복문</a></li>
+					<li><a href="../study/if.html">조건문</a></li>
+					<li><a href="../study/type.html">데이터 타입</a></li>
+					<li><a href="../study/function.html">함수</a></li>
+					<li><a href="../study/var.html">지역변수/전역변수</a></li>
+					<li><a href="../study/element.html">요소 선택</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- //header -->
+		<main id="main">
+			<div class="document">
+				<h2 class="t_tit">소수 찾기</h2>
+
+				<hr />
+
+				<h3 class="t_tit2">문제 설명</h3>
+				<p class="t_desc2">
+					1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수,
+					solution을 만들어 보세요.<br />
+					소수는 1과 자기 자신으로만 나누어지는 수를 의미합니다.<br />
+					(1은 소수가 아닙니다.)
+				</p>
+
+				<h3 class="t_tit2">제한 조건</h3>
+
+				<p class="t_desc2">🧀n은 2이상 1000000이하의 자연수입니다.</p>
+
+				<h3 class="t_tit2">입출력 예시</h3>
+				<table class="t_table">
+					<thead>
+						<tr>
+							<th>n</th>
+							<th>result</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ce">10</td>
+							<td class="ce">4</td>
+						</tr>
+						<tr>
+							<td class="ce">5</td>
+							<td class="ce">3</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<hr />
+
+				<h3 class="t_tit2">🧀내가 한 풀이</h3>
+				<p class="t_desc">
+					처음 시도한 풀이... 다른부분에서는 통과하지만, 효율성 검사에서 자꾸
+					걸렸다...
+				</p>
+				<div class="t_code">
+					<pre><code>//효율성에서 자꾸 걸림.. 
+function solution(n) {
+    var answer = 0;
+    for(let i = 2; i &lt;= n; i++){
+        let num = true;
+        for(let j = 2; j &lt;= Math.sqrt(i); j++){
+            if(i % j == 0) 
+                num = false;
+        }
+        if(num) answer++;
+    }
+    return answer;
+}
+</code></pre>
+				</div>
+
+				<h3 class="t_tit2">🧀내가 한 풀이2...</h3>
+				<p class="t_desc">
+					결국 다른 분들이 해결한 풀이 법을 참고해서 한 코드... 에라토스테네스의
+					체를 활용하여서 해결하였다...<br />
+					소수의 배수들을 제거해나가면 결국 소수만 남는 방식이라고 한다.
+				</p>
+				<div class="t_code">
+					<pre><code>//에라토스테네스의 체 사용 풀이
+function solution(n) {
+    var answer = [];
+    for(var i = 0; i &lt;= n; i++){
+        answer.push(true);
+    }
+    answer[0] = false;
+    answer[1] = false;
+    
+    for(var i = 2; i &lt;= n; i++){
+        if (answer[i]){
+            for(let j = 2; j &lt;= n/i; j++){
+                answer[i*j] = false;
+            }
+        }
+    }
+    return answer.filter(el => el === true).length;
+}
+</code></pre>
+				</div>
+				<h3 class="t_tit2">🧀다른 풀이</h3>
+				<p class="t_desc">Set()을 활용하여서 해결하신 분들도 있었습니다.</p>
+				<div class="t_code">
+					<pre><code>function solution(n) {
+  const s = new Set();
+  for(let i=1; i&lt;=n; i+=2){
+      s.add(i);
+  }
+  s.delete(1);
+  s.add(2);
+  for(let j=3; j&lt;Math.sqrt(n); j++){
+      if(s.has(j)){
+            for(let k=j*2; k&lt;=n; k+=j){    
+              s.delete(k);
+            }
+      }
+  }
+  return s.size;
+}
+</code></pre>
+				</div>
+			</div>
+		</main>
+		<!-- //main -->
+		<footer id="footer">
+			<a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+		</footer>
+		<!-- //footer -->
+		<script src="../assets/js/highlight.min.js"></script>
+		<script>
+			hljs.highlightAll();
+		</script>
+	</body>
+</html>
+v
